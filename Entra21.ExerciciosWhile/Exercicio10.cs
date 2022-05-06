@@ -18,14 +18,15 @@ namespace Entra21.ExerciciosWhile
             int numero = Convert.ToInt32(Console.ReadLine());
             int auxiliar1 = numero - 1;
             int auxiliar2 = numero + 1;
+            string decrescente ="",crescente = "";
             int indice = 0;
 
-            while (indice < 50)
+            while (indice < 100)
             {
                 if ((auxiliar1 % 2) == 0)
                 {
                     indice = indice + 1;
-                    Console.Write(" " + indice + " " + auxiliar1);
+                    decrescente = decrescente + (" " + indice + " " + auxiliar1);
                     auxiliar1 = auxiliar1 - 1;
                 }
                 else
@@ -33,8 +34,20 @@ namespace Entra21.ExerciciosWhile
                     auxiliar1 = auxiliar1 - 1;
                 }
 
-            }
+                if ((auxiliar2 % 2) != 0)
+                {
+                    indice = indice + 1;
+                    crescente = crescente + (" " + indice + " " + auxiliar2);
+                    auxiliar2 = auxiliar2 + 1;
+                }
+                else
+                {
+                    auxiliar2 = auxiliar2 + 1;
+                }
 
+            }
+            Console.WriteLine(crescente + "\n" + decrescente);
+            indice = 0;
         }
     }
 }
