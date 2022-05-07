@@ -55,7 +55,7 @@ Informe o número da opção desejada");
                     Console.WriteLine(numero1 + " x " + numero2 + " = " + (numero1 * numero2));
                     Console.ReadKey();
                 }
-                else if(opcaoDesejada == 4)
+                else if (opcaoDesejada == 4)
                 {
                     Console.WriteLine(numero1 + " / " + numero2 + " = " + (numero1 / numero2));
                     Console.ReadKey();
@@ -69,8 +69,6 @@ Informe o número da opção desejada");
                     Console.Write(" Erro 404 - Opção invalida");
                     Console.ReadKey();
                 }
-
-
             }
         }
     }
