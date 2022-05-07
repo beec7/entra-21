@@ -1,6 +1,6 @@
 ﻿using Entra21.ExerciciosWhile;
 
-Console.WriteLine(@"
+Console.Write(@"
 1 - Exercicio 01
 2 - Exercicio 02
 3 - Exercicio 03
@@ -10,7 +10,10 @@ Console.WriteLine(@"
 7 - Exercicio 07
 8 - Exercicio 08
 9 - Exercicio 09
-10 - Exercicio 10");
+10 - Exercicio 10
+11 - Exercicio 11
+
+Informe a opção desejada: ");
 int opcaoDesejada = Convert.ToInt32(Console.ReadLine());
 
 if(opcaoDesejada== 1)
@@ -72,4 +75,10 @@ else if (opcaoDesejada == 10)
     Console.Clear();
     Exercicio10 exercicio10 = new Exercicio10();
     exercicio10.Executar();
+}
+else if (opcaoDesejada == 11)
+{
+    Console.Clear();
+    Exercicio11 exercicio11 = new Exercicio11();
+    exercicio11.Executar();
 }
