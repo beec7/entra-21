@@ -21,13 +21,12 @@ namespace Entra21.ExerciciosWhile
             string decrescente = "", crescente = "";
             int indice = 0;
 
-            while (indice < 100)
+            while (indice < 51)
             {
                 if ((auxiliar1 % 2) == 0)
                 {
-                    indice = indice + 1;
                     decrescente = decrescente +  " " + auxiliar1;
-                    auxiliar1 = auxiliar1 - 1;
+                    auxiliar1 = auxiliar1 - 2;
                 }
                 else
                 {
@@ -36,14 +35,14 @@ namespace Entra21.ExerciciosWhile
 
                 if ((auxiliar2 % 2) != 0)
                 {
-                    indice = indice + 1;
                     crescente = crescente + " " + auxiliar2;
-                    auxiliar2 = auxiliar2 + 1;
+                    auxiliar2 = auxiliar2 + 2;
                 }
                 else
                 {
                     auxiliar2 = auxiliar2 + 1;
                 }
+                indice = indice + 1;
 
             }
             Console.WriteLine(crescente + "\n\n" + decrescente);
