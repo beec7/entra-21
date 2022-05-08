@@ -21,6 +21,7 @@ namespace Entra21.ExerciciosWhile
 				double valorPeca = Convert.ToDouble(Console.ReadLine());
 				indice = indice + 1;
 			}
+			Console.ReadKey();
 		}
 	}
 }

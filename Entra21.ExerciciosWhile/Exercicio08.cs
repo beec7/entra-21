@@ -19,7 +19,7 @@ namespace Entra21.ExerciciosWhile
                 Console.WriteLine(numero + " x " + indice + " = " + (numero * indice));
                 indice = indice + 1;
             }
-
+            Console.ReadKey();
         }
     }
 }

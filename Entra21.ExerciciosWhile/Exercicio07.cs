@@ -32,7 +32,7 @@ namespace Entra21.ExerciciosWhile
                 }
             }
             Console.Write("Total com desconto de R$150: " + (totalPedido - 150));
-
+            Console.ReadKey();
         }
     }
 }

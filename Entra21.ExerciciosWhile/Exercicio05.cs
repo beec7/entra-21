@@ -55,7 +55,7 @@ Apresente ao final:
     "\n● Média do valor dos carros: " + (somaValorCarro / quantidadeCarros) +
     "\n● Quantidade de carros que começam com a letra G:" + quantidadeCarrosComecaG +
     "\n● Quantidade de carros que começam com a letra A:" + quantidadeCarrosComecaA);
-
+            Console.ReadKey();
         }
     }
 }

@@ -26,7 +26,7 @@ namespace Entra21.ExerciciosWhile
             }
             Console.Write(@"" + resposta + 
             total);
-
+            Console.ReadKey();
         }
     }
 }
