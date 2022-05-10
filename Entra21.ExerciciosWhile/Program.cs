@@ -15,7 +15,8 @@ while (loop == true)
 9 - Exercicio 09
 10 - Exercicio 10
 11 - Exercicio 11
-
+12 - Exercicio 12
+99 - Sair.
 Informe a opção desejada: ");
     int opcaoDesejada = Convert.ToInt32(Console.ReadLine());
 

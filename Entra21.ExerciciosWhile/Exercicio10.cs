@@ -44,6 +44,7 @@ namespace Entra21.ExerciciosWhile
                 }
                 indice = indice + 1;
 
+
             }
             Console.WriteLine(crescente + "\n\n" + decrescente);
             Console.ReadKey();

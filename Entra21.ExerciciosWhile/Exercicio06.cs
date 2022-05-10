@@ -31,6 +31,7 @@ sair, ao final deve-se aplicar ao valor total da compra um desconto de 5%.
 
             }
             Console.Write("Total com 5% de desconto: " + (total - (total * 0.05)));
+            Console.ReadKey();
 
         }
     }
