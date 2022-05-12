@@ -92,6 +92,12 @@ Informe a opção desejada: ");
         Exercicio12 exercicio12 = new Exercicio12();
         exercicio12.Executar();
     }
+    else if (opcaoDesejada == 17)
+    {
+        Console.Clear();
+        Exercicio17 exercicio17 = new Exercicio17();
+        exercicio17.Executar();
+    }
     else if (opcaoDesejada == 99)
     {
         loop = false;
