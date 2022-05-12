@@ -11,14 +11,13 @@ namespace Entra21.ExerciciosWhile
         public void Executar()
         {
             int hora = 23, minuto = 59, segundo = 59;
-          
-            
 
             while (hora >= 0 && minuto >= 0 && segundo >= 0)
             {
-                DateTime temporizador = new DateTime(12, 12, 12, hora, minuto, segundo);
+                DateTime temporizador = new DateTime(1, 1, 1, hora, minuto, segundo);
                 Console.WriteLine(temporizador.ToString("T"));
                 segundo = segundo - 1;
+                //Console.ReadKey();
                 if (segundo < 0)
                 {
                     segundo = 59;
@@ -29,7 +28,6 @@ namespace Entra21.ExerciciosWhile
                         hora = hora - 1;
                     }
                 }
-                
             }
             Console.ReadKey();
         }
