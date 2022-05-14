@@ -159,7 +159,6 @@ Código  Tipo         Nome                                         Valor
                         Console.ReadLine();
 
                     }
-
                 }
                 else
                 {
