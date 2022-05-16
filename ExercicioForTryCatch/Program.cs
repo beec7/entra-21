@@ -11,7 +11,7 @@ while (loop == true)
     while (opcaoValida == false)
     {
         Console.Clear();
-        Console.Write("" +
+        Console.WriteLine("" +
             "1 - Exercicio 01 While\n" +
             "2 - Exercicio 05 While\n" +
             "3 - Exercicio 08 While\n" +
@@ -21,7 +21,7 @@ while (loop == true)
             "99 - Sair");
         try
         {
-            Console.Write("Informe a opção desejada");
+            Console.WriteLine("Informe a opção desejada");
             opcaoDesejada = Convert.ToInt32(Console.ReadLine());
             if (opcaoDesejada <= 0)
             {
@@ -46,6 +46,15 @@ while (loop == true)
             {
                 var exercicio01 = new Exercicio01();
                 exercicio01.Executar();
+            }
+            else if(opcaoDesejada == 2)
+            {
+                var exercicio02 = new Exercicio02();
+                exercicio02.Executar();
+            }
+            else
+            {
+                Console.WriteLine("Não corresponde a uma opção existente.");
             }
 
         }

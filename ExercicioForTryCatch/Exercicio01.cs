@@ -19,7 +19,7 @@ namespace ExercicioForTryCatch
                     {
                         Console.Write("Nome da peça: ");
                         var nome = Console.ReadLine();
-                        if (nome.Length > 3)
+                        if (nome.Length >= 3)
                         {
                             nomeValdio = true;
                         }
@@ -46,7 +46,7 @@ namespace ExercicioForTryCatch
                         {
                             Console.Write("Valor não pode ser negativo");
                         }
-                        else if (valor < 100000000.0)
+                        else if (valor > 100000000.0)
                         {
                             Console.Write("Valor excedeu o limite ");
                         }
