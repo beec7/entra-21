@@ -8,5 +8,9 @@ namespace ExercicioForTryCatch
 {
     internal class Exercicio03
     {
+        public void Executar()
+        {
+
+        }
     }
 }
