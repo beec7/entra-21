@@ -31,7 +31,7 @@ namespace ExercicioForTryCatch
                         else
                         {
                             numeroCrecente++;
-                        }
+                        } 
                         if ((numeroDecrecente%2) == 0)
                         {
                             imprimirDecrecente += (" [ " + numeroDecrecente + " ] ");
