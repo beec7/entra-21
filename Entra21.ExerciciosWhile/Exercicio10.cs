@@ -21,7 +21,7 @@ namespace Entra21.ExerciciosWhile
             string decrescente = "", crescente = "";
             int indice = 0;
 
-            while (indice < 51)
+            while (indice <= 50)
             {
                 if ((auxiliar1 % 2) == 0)
                 {
