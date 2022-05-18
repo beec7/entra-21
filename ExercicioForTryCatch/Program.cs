@@ -47,7 +47,7 @@ while (loop == true)
                 var exercicio01 = new Exercicio01();
                 exercicio01.Executar();
             }
-            else if(opcaoDesejada == 2)
+            else if (opcaoDesejada == 2)
             {
                 var exercicio02 = new Exercicio02();
                 exercicio02.Executar();
@@ -62,11 +62,15 @@ while (loop == true)
                 var exercicio04 = new Exercicio04();
                 exercicio04.Executar();
             }
+            else if (opcaoDesejada == 5)
+            {
+                var exercicio05 = new Exercicio05();
+                exercicio05.Executar();
+            }
             else
             {
                 Console.WriteLine("Não corresponde a uma opção existente.");
             }
-
         }
         else
         {
