@@ -10,8 +10,8 @@ namespace ExercicioForTryCatch
     {
         public void Executar()
         {
-            
-            var quantidadeJogador = 3;
+
+            var quantidadeJogador = 2;
 
             var sexoMasculino = 0;
             var sexoFeminino = 0;
@@ -23,12 +23,12 @@ namespace ExercicioForTryCatch
             var menorNome = "";
             var maiorAltura = double.MinValue;
             var nomeMaiorAltura = "";
-            var nomeMaiorQuantidadeCartaoVermelho = "";
+            var nomeMaiorQuantidadeCartoesVermelho = "";
             var nomeMenorQuantidadeCartoesVermelho = "";
-            var nomeMaiorQuantidadeCartaoAmarelo = "";
+            var nomeMaiorQuantidadeCartoesAmarelo = "";
             var nomeMenorQuantidadeCartoesAmarelo = "";
 
-            var tamanhoMaioNome = int.MinValue;
+            var tamanhoMaiorNome = int.MinValue;
             var tamanhoMenorNome = int.MaxValue;
             var maiorQuantidadeCartoesAmarelo = int.MinValue;
             var menorQuantidadeCartoesAmarelo = int.MaxValue;
@@ -52,7 +52,7 @@ namespace ExercicioForTryCatch
                     {
                         Console.Clear();
                         Console.Write("Nome: ");
-                        nome = Console.ReadLine();
+                        nome = Console.ReadLine().Trim();
                         if (nome.Length < 2)
                         {
                             Console.Write("Informe o nome. não o apelido.");
@@ -77,7 +77,7 @@ namespace ExercicioForTryCatch
                     {
                         Console.Clear();
                         Console.Write("Idade: ");
-                        idade = Convert.ToInt32(Console.ReadLine());
+                        idade = Convert.ToInt32(Console.ReadLine().Trim());
                         if (idade <= 0)
                         {
                             Console.Write("Idade não pode ser menor do que 0.");
@@ -107,7 +107,7 @@ namespace ExercicioForTryCatch
                     {
                         Console.Clear();
                         Console.Write("Peso: ");
-                        peso = Convert.ToDouble(Console.ReadLine());
+                        peso = Convert.ToDouble(Console.ReadLine().Trim());
                         if (peso <= 0)
                         {
                             Console.Write("Idade não pode ser menor do que 0.");
@@ -132,7 +132,7 @@ namespace ExercicioForTryCatch
                     {
                         Console.Clear();
                         Console.Write("Altura: ");
-                        altura = Convert.ToDouble(Console.ReadLine());
+                        altura = Convert.ToDouble(Console.ReadLine().Trim());
                         if (altura <= 0)
                         {
                             Console.Write("Até uma formiga é maior do que isso.");
@@ -157,7 +157,7 @@ namespace ExercicioForTryCatch
                     {
                         Console.Clear();
                         Console.Write("Sexo: ");
-                        var sexo = Console.ReadLine();
+                        var sexo = Console.ReadLine().Trim();
                         if (sexo.ToLower().Trim() == "m" || sexo.ToLower().Trim() == "homem" || sexo.ToLower().Trim() == "masculino")
                         {
                             sexoMasculino++;
@@ -189,7 +189,7 @@ namespace ExercicioForTryCatch
                     {
                         Console.Clear();
                         Console.Write("Quantos de gol: ");
-                        quantidadeGol = Convert.ToInt32(Console.ReadLine());
+                        quantidadeGol = Convert.ToInt32(Console.ReadLine().Trim());
                         if (quantidadeGol > 0)
                         {
                             validar = true;
@@ -214,8 +214,8 @@ namespace ExercicioForTryCatch
                     {
                         Console.Clear();
                         Console.Write("Quantos de Cartões Amarelo: ");
-                        quantidadeCartoesAmarelo = Convert.ToInt32(Console.ReadLine());
-                        if (quantidadeCartoesAmarelo > 0)
+                        quantidadeCartoesAmarelo = Convert.ToInt32(Console.ReadLine().Trim());
+                        if (quantidadeCartoesAmarelo >= 0)
                         {
                             validar = true;
                         }
@@ -239,8 +239,8 @@ namespace ExercicioForTryCatch
                     {
                         Console.Clear();
                         Console.Write("Quantos de Cartões Vermelho: ");
-                        quantidadeCartoesVermelho = Convert.ToInt32(Console.ReadLine());
-                        if (quantidadeCartoesVermelho > 0)
+                        quantidadeCartoesVermelho = Convert.ToInt32(Console.ReadLine().Trim());
+                        if (quantidadeCartoesVermelho >= 0)
                         {
                             validar = true;
                         }
@@ -263,8 +263,8 @@ namespace ExercicioForTryCatch
             ➔ A quantidade de jogadores do sexo F x
             ➔ A quantidade de jogadores do sexo M x*/
 
-                 //➔ O jogador com o maior peso;
-                 //➔ O jogador com o menor peso;
+                //➔ O jogador com o maior peso;
+                //➔ O jogador com o menor peso;
                 if (peso > maiorPeso)
                 {
                     maiorPeso = peso;
@@ -275,7 +275,7 @@ namespace ExercicioForTryCatch
                     nomeMaiorPeso += " " + nome;
                 }
 
-                if(peso > menorPeso)
+                if (peso < menorPeso)
                 {
                     menorPeso = peso;
                     nomeMenorPeso = nome;
@@ -285,14 +285,14 @@ namespace ExercicioForTryCatch
                     nomeMenorPeso += "\n" + nome;
                 }
 
-                
-                  //➔ O jogador com a maior altura;
+
+                //➔ O jogador com a maior altura;
                 if (altura > maiorAltura)
                 {
                     maiorAltura = altura;
                     nomeMaiorAltura = nome;
                 }
-                else if( altura == maiorAltura)
+                else if (altura == maiorAltura)
                 {
                     nomeMaiorAltura += "\n" + nome;
                 }
@@ -300,12 +300,12 @@ namespace ExercicioForTryCatch
                 //➔ O jogador com o maior nome;
                 //➔ O jogador com o menor nome;
 
-                if (nome.Trim().Length > tamanhoMaioNome)
+                if (nome.Trim().Length > tamanhoMaiorNome)
                 {
-                    tamanhoMaioNome = nome.Trim().Length;
+                    tamanhoMaiorNome = nome.Trim().Length;
                     maiorNome = nome;
                 }
-                else if(nome.Trim().Length == tamanhoMaioNome)
+                else if (nome.Trim().Length == tamanhoMaiorNome)
                 {
                     maiorNome += "\n" + nome;
                 }
@@ -322,15 +322,15 @@ namespace ExercicioForTryCatch
 
                 //➔ O jogador com a menor quantidade de cartões amarelos recebidos;
                 //➔ O jogador com a maior quantidade de cartões amarelos recebidos;
-                
+
                 if (quantidadeCartoesAmarelo > maiorQuantidadeCartoesAmarelo)
                 {
                     maiorQuantidadeCartoesAmarelo = quantidadeCartoesAmarelo;
-                    nomeMaiorQuantidadeCartaoAmarelo = nome;
+                    nomeMaiorQuantidadeCartoesAmarelo = nome;
                 }
                 else if (quantidadeCartoesAmarelo == maiorQuantidadeCartoesAmarelo)
                 {
-                    nomeMaiorQuantidadeCartaoAmarelo += "\n" + nome;
+                    nomeMaiorQuantidadeCartoesAmarelo += "\n" + nome;
                 }
 
                 if (quantidadeCartoesAmarelo < menorQuantidadeCartoesAmarelo)
@@ -349,11 +349,11 @@ namespace ExercicioForTryCatch
                 if (quantidadeCartoesVermelho > maiorQuantidadeCartoesVermelho)
                 {
                     maiorQuantidadeCartoesVermelho = quantidadeCartoesVermelho;
-                    nomeMaiorQuantidadeCartaoVermelho = nome;
+                    nomeMaiorQuantidadeCartoesVermelho = nome;
                 }
                 else if (quantidadeCartoesVermelho == maiorQuantidadeCartoesVermelho)
                 {
-                    nomeMaiorQuantidadeCartaoVermelho += "\n" + nome;
+                    nomeMaiorQuantidadeCartoesVermelho += "\n" + nome;
                 }
 
                 if (quantidadeCartoesVermelho < menorQuantidadeCartoesVermelho)
@@ -366,6 +366,18 @@ namespace ExercicioForTryCatch
                     nomeMenorQuantidadeCartoesVermelho += "\n" + nome;
                 }
             }
+            Console.Write("Nome e peso do maior peso:\n" + nomeMaiorPeso + "\n" + maiorPeso + "\n\n" +
+                "Nome e peso menor peso:\n" + nomeMenorPeso + "\n" + menorPeso + "\n\n" +
+                "Nome e altura do maior altura:\n" + nomeMaiorAltura + "\n" + maiorAltura + "\n\n" +
+                "Total de cada sexo:\n" + "MASCULINO: " + sexoMasculino + "\nFEMININO: " + sexoFeminino + "\n\n" +
+                "Jogador com maior nome:\n" + maiorNome + "\n" + tamanhoMaiorNome + "\n" +
+                "Jogador com menor nome:\n" + menorNome + "\n" + tamanhoMenorNome + "\n\n" +
+                "Jogador com a maior quantidade de cartoes amarelo recebido:\n" + nomeMaiorQuantidadeCartoesAmarelo + "\n" + maiorQuantidadeCartoesAmarelo + "\n" +
+                "Jogador com a menor quantidade de cartoes amarelo recebido:\n" + nomeMenorQuantidadeCartoesAmarelo + "\n" + menorQuantidadeCartoesAmarelo + "\n\n" +
+                "Jogador com a maior quantidade de cartoes vermelho recebido:\n" + nomeMaiorQuantidadeCartoesVermelho + "\n" + maiorQuantidadeCartoesVermelho + "\n" +
+                "Jogador com a menor quantidade de cartoes vermelho recebido:\n" + nomeMenorQuantidadeCartoesVermelho + "\n" + menorQuantidadeCartoesVermelho + "\n");
+                Console.ReadKey();
+
         }
     }
 }
