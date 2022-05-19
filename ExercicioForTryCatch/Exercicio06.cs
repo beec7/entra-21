@@ -24,7 +24,7 @@ namespace ExercicioForTryCatch
             var maiorAltura = double.MinValue;
             var nomeMaiorAltura = "";
             var nomeMaiorQuantidadeCartaoVermelho = "";
-            var nomemenorQuantidadeCartaoVermelho = "";
+            var nomeMenorQuantidadeCartoesVermelho = "";
             var nomeMaiorQuantidadeCartaoAmarelo = "";
             var nomeMenorQuantidadeCartoesAmarelo = "";
 
@@ -32,8 +32,8 @@ namespace ExercicioForTryCatch
             var tamanhoMenorNome = int.MaxValue;
             var maiorQuantidadeCartoesAmarelo = int.MinValue;
             var menorQuantidadeCartoesAmarelo = int.MaxValue;
-            var maiorQuantidadeCartaoVermelho = int.MinValue;
-            var menorQuantidadeCartaoVermelho = int.MaxValue;
+            var maiorQuantidadeCartoesVermelho = int.MinValue;
+            var menorQuantidadeCartoesVermelho = int.MaxValue;
 
             for (int i = 0; i < quantidadeJogador; i++)
             {
@@ -343,10 +343,28 @@ namespace ExercicioForTryCatch
                     nomeMenorQuantidadeCartoesAmarelo += "\n" + nome;
                 }
 
-
-
                 //➔ O jogador com a maior quantidade de cartões vermelhos recebidos;
                 //➔ O jogadorn com a menor quantidade de cartões vermelhos recebidos
+
+                if (quantidadeCartoesVermelho > maiorQuantidadeCartoesVermelho)
+                {
+                    maiorQuantidadeCartoesVermelho = quantidadeCartoesVermelho;
+                    nomeMaiorQuantidadeCartaoVermelho = nome;
+                }
+                else if (quantidadeCartoesVermelho == maiorQuantidadeCartoesVermelho)
+                {
+                    nomeMaiorQuantidadeCartaoVermelho += "\n" + nome;
+                }
+
+                if (quantidadeCartoesVermelho < menorQuantidadeCartoesVermelho)
+                {
+                    menorQuantidadeCartoesVermelho = quantidadeCartoesVermelho;
+                    nomeMenorQuantidadeCartoesVermelho = nome;
+                }
+                else if (quantidadeCartoesAmarelo == menorQuantidadeCartoesVermelho)
+                {
+                    nomeMenorQuantidadeCartoesVermelho += "\n" + nome;
+                }
             }
         }
     }
