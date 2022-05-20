@@ -25,7 +25,7 @@ namespace ExercicioForTryCatch
                     }
                     validar = true;
                 }
-                catch (Exception ex)
+                catch (Exception ex )
                 {
                     Console.Write("Número invalido");
                 }

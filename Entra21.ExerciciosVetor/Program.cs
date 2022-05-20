@@ -52,6 +52,8 @@ while (loop == true)
         }
         else if (opcaoDesejada == 3)
         {
+            var exercicio03 = new Exercicio03();
+            exercicio03.Executar();
 
         }
         else if (opcaoDesejada == 4)

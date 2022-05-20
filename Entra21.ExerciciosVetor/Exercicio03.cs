@@ -26,13 +26,38 @@ namespace Entra21.ExerciciosVetor
                         nomesProdutos[i] = Console.ReadLine();
                         validar = true;
                     }
-                    catch (Exception ex )
+                    catch (Exception ex)
                     {
-                        Console
+                        Console.Write("Nome Invalido");
                     }
 
                 }
+                validar = false;
+                while (validar == false)
+                {
+                    try
+                    {
+                        Console.Clear();
+                        Console.Write($"Infome o valor do {i + 1 }° produto; ");
+                        valoresProdutos[i] = Convert.ToDouble(Console.ReadLine());
+                        if (valoresProdutos[i] > 0.0)
+                        {
+                            validar = true;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.Write("ERRO. caracter não coresponte a um número;");
+                        Console.ReadKey();
+                    }
+                }
+
             }
+            for (int i = 0; i < valoresProdutos.Length; i++)
+            {
+                Console.WriteLine($"{i+1} Nome: {nomesProdutos[i]}  valor: R$ {valoresProdutos[i]}");
+            }
+            Console.ReadKey();
         }
     }
 }
