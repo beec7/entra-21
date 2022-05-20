@@ -63,7 +63,7 @@ namespace ExercicioForTryCatch
                             validar = true;
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
                         Console.Write("Erro.!?!");
                         Console.ReadKey();
@@ -118,7 +118,7 @@ namespace ExercicioForTryCatch
                             validar = true;
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
                         Console.Write("Erro. Informe um número. \nEx 70.10");
                         Console.ReadKey();
@@ -143,7 +143,7 @@ namespace ExercicioForTryCatch
                             validar = true;
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
                         Console.Write("Erro. Informe um número. \nEx 1.70");
                         Console.ReadKey();
@@ -175,8 +175,8 @@ namespace ExercicioForTryCatch
                             Console.ReadKey();
                         }
                     }
-                    catch
-                    {
+                    catch (Exception ex)
+                    { 
                         Console.Write("Erro.Informe novamente.");
                         Console.ReadKey();
                     }
@@ -200,7 +200,7 @@ namespace ExercicioForTryCatch
                             Console.ReadKey();
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
                         Console.Write("Erro.tem que ser número inteiro");
                         Console.ReadKey();
@@ -225,7 +225,7 @@ namespace ExercicioForTryCatch
                             Console.ReadKey();
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
                         Console.Write("Erro.tem que ser número inteiro");
                         Console.ReadKey();
@@ -250,7 +250,7 @@ namespace ExercicioForTryCatch
                             Console.ReadKey();
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
                         Console.Write("Erro.tem que ser número inteiro");
                         Console.ReadKey();

@@ -60,7 +60,7 @@ Código  Tipo         Nome                                         Valor
                             validar = true;
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
                         Console.Write("Erro não é um código, Informe um código do menu.");
                         Console.ReadKey();

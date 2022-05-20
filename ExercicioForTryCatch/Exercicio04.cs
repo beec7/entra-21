@@ -44,7 +44,7 @@ namespace ExercicioForTryCatch
                     }
                     validar = true;
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.Write("Não é um numero Valido");
                 }

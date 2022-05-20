@@ -23,7 +23,7 @@ namespace Entra21.ExerciciosVetor
                         numeros[i] = Convert.ToInt32(Console.ReadLine());
                         validar = true;
                     }
-                    catch
+                    catch (Exception ex)
                     {
                         Console.WriteLine("Erro. esse caracter não representa um inteiro");
                     }

@@ -35,7 +35,7 @@ namespace ExercicioForTryCatch
                         validar = true;
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("Informe um número INTEIR: ");
                 }
@@ -63,7 +63,7 @@ namespace ExercicioForTryCatch
                             Console.WriteLine("Informe um nome valido");
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
                         Console.WriteLine("...");
                     }
@@ -88,7 +88,7 @@ namespace ExercicioForTryCatch
                         }
 
                     }
-                    catch
+                    catch (Exception ex)
                     {
                         Console.WriteLine("Tem que ser um número");
                     }
@@ -116,7 +116,7 @@ namespace ExercicioForTryCatch
                             validar = true;
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
                         Console.WriteLine("Ano invalido");
                     }
