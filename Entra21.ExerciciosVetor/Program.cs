@@ -94,8 +94,8 @@ while (loop == true)
             exercicio10.Executar();
         }else if (opcaoDesejada == 11)
         {
-            var exercicio09 = new Exercicio09();
-            exercicio09.Executar();
+            var exercicio11 = new Exercicio11();
+            exercicio11.Executar();
         }
         else if (opcaoDesejada == 20)
         {
