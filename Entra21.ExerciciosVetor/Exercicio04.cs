@@ -31,6 +31,7 @@ namespace Entra21.ExerciciosVetor
                 }
                 boletins[i] = boletim + "Média: " + (soma / notas.Length) ;
             }
+            Console.Clear();
             for (int i = 0; i < boletins.Length; i++)
             {
                 Console.WriteLine(boletins[i] + " \n");

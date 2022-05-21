@@ -15,10 +15,14 @@ namespace Entra21.ExerciciosVetor
             //ConsoleTables Nuget Manage
 
             var table = new ConsoleTable("one", "two", "three");
+            table.Configure(x => x.EnableCount = false);
+
             table.AddRow(1, 2, 3)
+
                  .AddRow("this line should be longer", "yes it is", "oh");
 
-            table.Write();
+            Console.WriteLine(table);
+            Console.ReadKey();
         }
     }
 }
