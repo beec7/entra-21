@@ -58,7 +58,8 @@ while (loop == true)
         }
         else if (opcaoDesejada == 4)
         {
-
+            var exercicio04 = new Exercicio04();
+            exercicio04.Executar();
         }
         else if (opcaoDesejada == 5)
         {
@@ -71,6 +72,11 @@ while (loop == true)
         else if (opcaoDesejada == 7)
         {
 
+        }
+        else if (opcaoDesejada == 10)
+        {
+            var exemploProfessor = new ExemploProfessor();
+            exemploProfessor.Executar();
         }
         else if (opcaoDesejada == 99)
         {
