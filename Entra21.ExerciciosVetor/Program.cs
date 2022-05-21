@@ -63,7 +63,8 @@ while (loop == true)
         }
         else if (opcaoDesejada == 5)
         {
-
+            var exercicio05 = new Exercicio05();
+            exercicio05.Executar();
         }
         else if (opcaoDesejada == 6)
         {
