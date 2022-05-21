@@ -20,6 +20,8 @@ while (loop == true)
 5 - Exercicio05
 6 - Exercicio06
 7 - Exercicio07
+8 - Exercicio08
+9 - Exercicio09
 20 - Exercicio20
 99 - sair");
 
@@ -81,6 +83,19 @@ while (loop == true)
         {
             var exercicio08 = new Exercicio08();
             exercicio08.Executar();
+        }
+        else if (opcaoDesejada == 9)
+        {
+            var exercicio09 = new Exercicio09();
+            exercicio09.Executar();
+        }else if (opcaoDesejada == 10)
+        {
+            var exercicio10 = new Exercicio10();
+            exercicio10.Executar();
+        }else if (opcaoDesejada == 11)
+        {
+            var exercicio09 = new Exercicio09();
+            exercicio09.Executar();
         }
         else if (opcaoDesejada == 20)
         {
