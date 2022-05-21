@@ -20,6 +20,7 @@ while (loop == true)
 5 - Exercicio05
 6 - Exercicio06
 7 - Exercicio07
+20 - Exercicio20
 99 - sair");
 
             Console.Write("Opção desejada: ");
@@ -68,13 +69,20 @@ while (loop == true)
         }
         else if (opcaoDesejada == 6)
         {
-
+            var exercicio06 = new Exercicio06();
+            exercicio06.Executar();
         }
         else if (opcaoDesejada == 7)
         {
-
+            var exercicio07 = new Exercicio07();
+            exercicio07.Executar();
         }
-        else if (opcaoDesejada == 10)
+        else if (opcaoDesejada == 8)
+        {
+            var exercicio08 = new Exercicio08();
+            exercicio08.Executar();
+        }
+        else if (opcaoDesejada == 20)
         {
             var exemploProfessor = new ExemploProfessor();
             exemploProfessor.Executar();
