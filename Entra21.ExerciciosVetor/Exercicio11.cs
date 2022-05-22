@@ -18,11 +18,23 @@ namespace Entra21.ExerciciosVetor
             var quantidade = 10;
             var numeros = new int[quantidade];
             var contadorPar = 0;
-          
+
             for (int i = 0; i < numeros.Length; i++)
             {
-                Console.Write($"Informe o {i + 1} de {numeros.Length}: ");
-                numeros[i] = Convert.ToInt32(Console.ReadLine());
+                var validar = false;
+                while (validar == false)
+                {
+                    try
+                    {
+                        Console.Write($"Informe o {i + 1} de {numeros.Length}: ");
+                        numeros[i] = Convert.ToInt32(Console.ReadLine());
+                        validar = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Erro");
+                    }
+                }
                 if ((numeros[i] % 2) == 0)
                 {
                     contadorPar++;
@@ -30,7 +42,7 @@ namespace Entra21.ExerciciosVetor
             }
 
             var numerosPares = new int[contadorPar];
-            var numerosImpares = new int[numeros.Length -  contadorPar];
+            var numerosImpares = new int[numeros.Length - contadorPar];
 
             contadorPar = 0;
             var contadorImpar = 0;
@@ -51,11 +63,14 @@ namespace Entra21.ExerciciosVetor
 
             for (int i = 0; i < numerosPares.Length; i++)
             {
-                Console.WriteLine(numerosPares[i]);
+                Console.Write(" " + numerosPares[i] + " |");
             }
+            
+            Console.WriteLine("\n");
+
             for (int i = 0; i < numerosImpares.Length; i++)
             {
-                Console.WriteLine(numerosImpares[i]);
+                Console.Write(" " + numerosImpares[i] + " |");
             }
             Console.ReadKey();
         }
