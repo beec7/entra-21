@@ -22,8 +22,10 @@ while (loop == true)
 7 - Exercicio07
 8 - Exercicio08
 9 - Exercicio09
-9 - Exercicio10
-9 - Exercicio11
+10 - Exercicio10
+11 - Exercicio11
+12 - Exercicio12
+13 - Exercicio13
 20 - Exercicio20
 99 - sair");
 
