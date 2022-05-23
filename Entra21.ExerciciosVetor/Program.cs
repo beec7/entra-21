@@ -99,6 +99,11 @@ while (loop == true)
             var exercicio11 = new Exercicio11();
             exercicio11.Executar();
         }
+        else if (opcaoDesejada == 12)
+        {
+            var exercicio12 = new Exercicio12();
+            exercicio12.Executar();
+        }
         else if (opcaoDesejada == 20)
         {
             var exemploProfessor = new ExemploProfessor();
