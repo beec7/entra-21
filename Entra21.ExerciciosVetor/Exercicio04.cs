@@ -33,7 +33,6 @@ namespace Entra21.ExerciciosVetor
                     }
                 }
 
-
                 var boletim = nome + ": ";
                 var soma = 0.0;
                 for (var j = 0; j < notas.Length; j++)
@@ -66,6 +65,7 @@ namespace Entra21.ExerciciosVetor
                 }
                 boletins[i] = boletim + "Média: " + (soma / notas.Length);
             }
+
             Console.Clear();
             for (int i = 0; i < boletins.Length; i++)
             {

@@ -11,7 +11,7 @@ namespace Entra21.ExerciciosVetor
         public void Executar()
         {
             var nomes = new string[3];
-            for (var i = 0; i < nomes.Length; i = i+1)
+            for (var i = 0; i < nomes.Length; i = i + 1)
             {
                 var valdiar = false;
                 while (valdiar == false)
@@ -25,21 +25,32 @@ namespace Entra21.ExerciciosVetor
                     }
                 }
             }
+
             var todosNomes = "";
             for (int i = 0; i < nomes.Length; i++)
             {
-                if (i == 0)
+                //if (i == 0)
+                //{
+                //    todosNomes = nomes[i];
+                //}
+                //else if (i < nomes.Length - 1)
+                //{
+                //    todosNomes += ", " + nomes[i]; 
+                //}
+                //else
+                //{
+                //    todosNomes += " e " + nomes[i];
+                //}
+
+                if (i < nomes.Length - 1)
                 {
-                    todosNomes = nomes[i];
+                    todosNomes += ", ";
                 }
-                else if (i < nomes.Length - 1)
+                else if (i != 0)
                 {
-                    todosNomes += ", " + nomes[i]; 
+                    todosNomes += " e ";
                 }
-                else
-                {
-                    todosNomes += " e " + nomes[i];
-                }
+                todosNomes += nomes[i];
             }
             Console.WriteLine(todosNomes);
             Console.ReadKey();

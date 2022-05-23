@@ -39,6 +39,7 @@ namespace Entra21.ExerciciosVetor
                     }
                 }
             }
+
             Console.Clear();
             for (int i = 0; i < numeros.Length; i++)
             {

@@ -30,12 +30,14 @@ namespace Entra21.ExerciciosVetor
 
                 }
             }
+
             var soma = 0.0;
-            for (var i = 0; i < pesos.Length; i = i+1)
+            for (var i = 0; i < pesos.Length; i = i + 1)
             {
                 soma += pesos[i];
             }
-            Console.Write("Soma: " + soma + "\nMédia: " + (soma/pesos.Length));
+
+            Console.Write("Soma: " + soma + "\nMédia: " + (soma / pesos.Length));
             Console.ReadKey();
         }
     }

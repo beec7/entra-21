@@ -18,7 +18,6 @@ namespace Entra21.ExerciciosVetor
             var quantidade = 10;
             var numeros = new int[quantidade];
             var contadorPar = 0;
-
             for (int i = 0; i < numeros.Length; i++)
             {
                 var validar = false;
@@ -43,10 +42,8 @@ namespace Entra21.ExerciciosVetor
 
             var numerosPares = new int[contadorPar];
             var numerosImpares = new int[numeros.Length - contadorPar];
-
             contadorPar = 0;
             var contadorImpar = 0;
-
             for (int i = 0; i < numeros.Length; i++)
             {
                 if ((numeros[i] % 2) == 0)

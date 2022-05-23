@@ -14,7 +14,7 @@ namespace Entra21.ExerciciosVetor
             var nomesProdutos = new string[quantidadeProdutos];
             var valoresProdutos = new double[quantidadeProdutos];
 
-            for (var i = 0; nomesProdutos.Length > i; i = i + 1)
+            for (var i = 0; i < nomesProdutos.Length; i = i + 1)
             {
                 var validar = false;
                 while (validar == false)
@@ -32,6 +32,7 @@ namespace Entra21.ExerciciosVetor
                     }
 
                 }
+
                 validar = false;
                 while (validar == false)
                 {
@@ -53,6 +54,7 @@ namespace Entra21.ExerciciosVetor
                 }
 
             }
+
             for (int i = 0; i < valoresProdutos.Length; i++)
             {
                 Console.WriteLine($"{i+1} Nome: {nomesProdutos[i]}  valor: R$ {valoresProdutos[i]}");

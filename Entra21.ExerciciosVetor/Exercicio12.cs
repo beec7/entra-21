@@ -10,7 +10,7 @@ namespace Entra21.ExerciciosVetor
     {
         public void Executar()
         {
-            int[] numeros = new int[5];
+            int[] numeros = new int[15];
 
             for (int i = 0; i < numeros.Length; i += 1)
             {
@@ -41,31 +41,31 @@ namespace Entra21.ExerciciosVetor
                     }
                 }
             }
-            var contador = 0;
-            var utimoValor = int.MinValue;
 
+            var contadorRepetidos = 0;
+            var utimoValor = int.MinValue;
             for (int i = 0; i < numeros.Length; i++)
             {
                 var numeroVerificador = int.MaxValue;
-                if (contador == 0)
+                if (contadorRepetidos == 0)
                 {
                     for (var j = 0; j < numeros.Length; j++)
                     {
                         if (numeros[j] < numeroVerificador && numeros[j] > utimoValor)
                         {
                             numeroVerificador = numeros[j];
-                            contador = 0;
+                            contadorRepetidos = 0;
                         }
                         else if (numeros[j] == numeroVerificador)
                         {
-                            contador++;
+                            contadorRepetidos++;
                         }
                     }
                     utimoValor = numeroVerificador;
                 }
                 else
                 {
-                    contador--;
+                    contadorRepetidos--;
                 }
                 Console.WriteLine(utimoValor);
             }

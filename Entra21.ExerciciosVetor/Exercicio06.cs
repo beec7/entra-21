@@ -13,6 +13,7 @@ namespace Entra21.ExerciciosVetor
             Console.Clear();
             int maiorIdade = int.MinValue;
             int[] idades = new int[9];
+
             for (int i = 0; i < idades.Length; i++)
             {
                 Console.Write($"Informe o {i + 1}° peso: ");

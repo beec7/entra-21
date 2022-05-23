@@ -30,6 +30,7 @@ namespace Entra21.ExerciciosVetor
 
                 }
             }
+
             var soma = 0;
             for (var i = 0; i < numeros.Length; i = i+1)
             {

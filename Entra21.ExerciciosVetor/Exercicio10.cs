@@ -19,6 +19,7 @@ namespace Entra21.ExerciciosVetor
                 Console.Write($"Informe o { i + 1} número: ");
                 numerosVetor1[i] = Convert.ToInt32(Console.ReadLine());
             }
+
             for (int i = 0; i < numerosVetor2.Length; i++)
             {
                 if (i != 0)

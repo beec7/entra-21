@@ -24,10 +24,13 @@ namespace Entra21.ExerciciosVetor
                     nomes1[i] = Console.ReadLine().Trim().ToUpper();
                 }
             }
+
             Console.Clear();
             for (int i = 0; i < nomes1.Length; i++)
             {
-                nomes2[i] = nomes1[(nomes2.Length - 1 - i)];
+                int indice = nomes2.Length - 1 - i;
+
+                nomes2[i] = nomes1[indice];
                 Console.Write($"nome1: {nomes1[i]}  nome2: {nomes2[i]}  |");
             }
             Console.ReadKey();

@@ -26,6 +26,7 @@ namespace Entra21.ExerciciosVetor
                     Console.Write("Informe o nome correto: ");
                     animais[i] = Console.ReadLine();
                 }
+
                 var validar = false;
                 while (validar == false)
                 {
@@ -50,6 +51,7 @@ namespace Entra21.ExerciciosVetor
                     }
                 }
             }
+
             var maiorAltura = double.MinValue;
             var animalMaiorAltura = 0;
             for (int i = 0; i < quantidade; i++)
