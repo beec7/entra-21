@@ -38,7 +38,7 @@ namespace Entra21.ExerciciosOrientacaoObjeto.Exercicio01
         }
         public int ApresentarQuantidadePaginasParaLer()
         {
-            return QuantidadePaginas + QuantidadePaginasLidas;
+            return QuantidadePaginas - QuantidadePaginasLidas;
         }
         public int ApresentarQuantidadePaginasLidasNoTotal()
         {

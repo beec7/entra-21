@@ -1,2 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+using Entra21.ExerciciosOrientacaoObjeto.Exercicio01;
+
+ExemploLivro exemplo = new ExemploLivro();
+exemplo.Executar();

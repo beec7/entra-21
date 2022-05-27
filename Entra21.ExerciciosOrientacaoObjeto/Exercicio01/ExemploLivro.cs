@@ -1,19 +1,23 @@
-﻿]using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entra21.ExerciciosOrientacaoObjeto.Exercicio01
+﻿namespace Entra21.ExerciciosOrientacaoObjeto.Exercicio01
 {
-    internal class ExemploLivro
+    public class ExemploLivro
     {
-        public static void Mean(params string[] vs)
+        public void Executar()
         {
             Livro livro = new Livro();
             livro.Titulo = "A Arte da guera";
             livro.Autor = "desconhecido";
-            livro.DataLancamento = DateTime
+            livro.DataLancamento = new DateTime(1700, 01, 01);
+            livro.QuantidadePaginas = 250;
+            livro.QuantidadePaginasLidas = 100;
+            livro.QuantidadeReleituras = 3;
+
+
+            Console.WriteLine(
+                livro.ApresentarTituloAutor()
+                 + "\nQuantidade de paginas lidas: " + livro.ApresentarQuantidadePaginasLidasNoTotal() +
+                 "\nQuantidade de paginas para ler : " + livro.ApresentarQuantidadePaginasParaLer());
         }
+
     }
 }
