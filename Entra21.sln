@@ -11,11 +11,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.ExercicioForTryCatc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.ExerciciosVetor", "Entra21.ExerciciosVetor\Entra21.ExerciciosVetor.csproj", "{47185CF5-1D89-4F3C-B459-897BA0D8ECFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entra21.ExemploOrientacaoObjetos", "Entra21ExemploOrientaocaoObjetos\Entra21.ExemploOrientacaoObjetos.csproj", "{E743F2F6-B5E1-4576-B09D-4C7DA76A22F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.ExemploOrientacaoObjetos", "Entra21ExemploOrientaocaoObjetos\Entra21.ExemploOrientacaoObjetos.csproj", "{E743F2F6-B5E1-4576-B09D-4C7DA76A22F7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "while for vetor", "while for vetor", "{46488EC3-76A9-4632-9DB5-DE9531179689}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entra21.ExemploOrientacaoObjetos.Tests", "Entra21ExemploOrientacaoObjetos.Tests\Entra21.ExemploOrientacaoObjetos.Tests.csproj", "{E86110BA-2A14-4123-8F48-B08001B146D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.ExemploOrientacaoObjetos.Tests", "Entra21ExemploOrientacaoObjetos.Tests\Entra21.ExemploOrientacaoObjetos.Tests.csproj", "{E86110BA-2A14-4123-8F48-B08001B146D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExemploOrientacaoObjetos", "ExemploOrientacaoObjetos", "{98F78501-C5B3-4E9E-BF73-4D3B2C74BD2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entra21.ExerciciosOrientacaoObjeto", "Entra21.ExerciciosOrientacaoObjeto\Entra21.ExerciciosOrientacaoObjeto.csproj", "{BC2E009C-8CA2-4855-9376-88C1C8989B5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entra21.ExerciciosOrientacaoObjeto.Tests", "Entra21.ExerciciosOrientacaoObjeto.Tests\Entra21.ExerciciosOrientacaoObjeto.Tests.csproj", "{80E3349A-6A53-4B17-AD91-1E102DFAC3F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ListaExercicios05", "ListaExercicios05", "{CF943CF8-B98A-42BB-BE5B-3A72682C300C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +55,14 @@ Global
 		{E86110BA-2A14-4123-8F48-B08001B146D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E86110BA-2A14-4123-8F48-B08001B146D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E86110BA-2A14-4123-8F48-B08001B146D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC2E009C-8CA2-4855-9376-88C1C8989B5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC2E009C-8CA2-4855-9376-88C1C8989B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC2E009C-8CA2-4855-9376-88C1C8989B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC2E009C-8CA2-4855-9376-88C1C8989B5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80E3349A-6A53-4B17-AD91-1E102DFAC3F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80E3349A-6A53-4B17-AD91-1E102DFAC3F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80E3349A-6A53-4B17-AD91-1E102DFAC3F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80E3349A-6A53-4B17-AD91-1E102DFAC3F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +72,10 @@ Global
 		{B0CB8D64-E183-4CF9-924B-8288BCCB86C4} = {46488EC3-76A9-4632-9DB5-DE9531179689}
 		{C26928FB-9F1D-4F9B-96DE-1A401C904237} = {46488EC3-76A9-4632-9DB5-DE9531179689}
 		{47185CF5-1D89-4F3C-B459-897BA0D8ECFF} = {46488EC3-76A9-4632-9DB5-DE9531179689}
+		{E743F2F6-B5E1-4576-B09D-4C7DA76A22F7} = {98F78501-C5B3-4E9E-BF73-4D3B2C74BD2E}
+		{E86110BA-2A14-4123-8F48-B08001B146D8} = {98F78501-C5B3-4E9E-BF73-4D3B2C74BD2E}
+		{BC2E009C-8CA2-4855-9376-88C1C8989B5B} = {CF943CF8-B98A-42BB-BE5B-3A72682C300C}
+		{80E3349A-6A53-4B17-AD91-1E102DFAC3F3} = {CF943CF8-B98A-42BB-BE5B-3A72682C300C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2076B5DC-F847-4127-BF2A-D716315BF171}
