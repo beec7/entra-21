@@ -16,13 +16,13 @@ namespace Entra21.ExerciciosOrientacaoObjeto.Exercicio02
         public string TemperaturaDestino;
         public double TemperaturaValor;
 
-      public double CalcularCelsiusKelvin()
+        public double CalcularCelsiusKelvin()
         {
             return (TemperaturaValor + 273.15);
         }
         public double CalcularCelsiusFahrenheit()
         {
-            return (TemperaturaValor * (9 / 5)) + 32;
+            return (TemperaturaValor * 1.8) + 32;
         }
         public double CalcularKelvinCelsius()
         {
@@ -30,19 +30,52 @@ namespace Entra21.ExerciciosOrientacaoObjeto.Exercicio02
         }
         public double CalcularKelvinFahrenheit()
         {
-            return (CalcularKelvinCelsius() * (9 / 5)) + 32;
+            return (((CalcularKelvinCelsius()) * 1.8) + 32);
         }
         public double CalcularFahrenheitCelsius()
         {
-            return (TemperaturaValor - 32) * (5/9); 
+            return (TemperaturaValor - 32) * 0.55555555555555555555555555555556;
         }
         public double CalcularFahrenheitKelvin()
         {
-            return (CalcularFahrenheitCelsius() + 273.15);
+            return ((CalcularFahrenheitCelsius()) + 273.15);
         }
-        public void ApresentarTemperaturaConvertida()
+        public double ApresentarTemperaturaConvertida()
         {
-
+            if (TemperaturaOrigem.ToLower().Trim() == "c" || TemperaturaOrigem.ToLower().Trim() == "celsius")
+            {
+                if (TemperaturaDestino.ToLower().Trim() == "f" || TemperaturaDestino.ToLower().Trim() == "fahrenheit")
+                {
+                    return CalcularCelsiusFahrenheit();
+                }
+                else if (TemperaturaDestino.ToLower().Trim() == "k" || TemperaturaDestino.ToLower().Trim() == "kelvin")
+                {
+                    return CalcularCelsiusKelvin();
+                }
+            }
+            else if (TemperaturaOrigem.ToLower().Trim() == "k" || TemperaturaOrigem.ToLower().Trim() == "kelvin")
+            {
+                if (TemperaturaDestino.ToLower().Trim() == "f" || TemperaturaDestino.ToLower().Trim() == "fahrenheit")
+                {
+                    return CalcularKelvinFahrenheit();
+                }
+                else if (TemperaturaDestino.ToLower().Trim() == "c" || TemperaturaDestino.ToLower().Trim() == "celsius")
+                {
+                    return CalcularKelvinCelsius();
+                }
+            }
+            else if (TemperaturaOrigem.ToLower().Trim() == "f" || TemperaturaOrigem.ToLower().Trim() == "fahrenheit")
+            {
+                if (TemperaturaDestino.ToLower().Trim() == "c" || TemperaturaDestino.ToLower().Trim() == "celsius")
+                {
+                    return CalcularFahrenheitCelsius();
+                }
+                else if (TemperaturaDestino.ToLower().Trim() == "k" || TemperaturaDestino.ToLower().Trim() == "kelvin")
+                {
+                    return CalcularFahrenheitKelvin();
+                }
+            }
+            return 0.0; 
         }
 
     }
