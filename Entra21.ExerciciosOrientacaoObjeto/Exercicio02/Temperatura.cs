@@ -44,39 +44,79 @@ namespace Entra21.ExerciciosOrientacaoObjeto.Exercicio02
         {
             if (TemperaturaOrigem.ToLower().Trim() == "c" || TemperaturaOrigem.ToLower().Trim() == "celsius")
             {
-                if (TemperaturaDestino.ToLower().Trim() == "f" || TemperaturaDestino.ToLower().Trim() == "fahrenheit")
-                {
-                    return CalcularCelsiusFahrenheit();
-                }
-                else if (TemperaturaDestino.ToLower().Trim() == "k" || TemperaturaDestino.ToLower().Trim() == "kelvin")
-                {
-                    return CalcularCelsiusKelvin();
-                }
+                return (TemperaturaDestino.ToLower().Trim() == "f" || TemperaturaDestino.ToLower().Trim() == "fahrenheit")
+                  ? CalcularCelsiusFahrenheit()
+                  : CalcularCelsiusKelvin();
             }
-            else if (TemperaturaOrigem.ToLower().Trim() == "k" || TemperaturaOrigem.ToLower().Trim() == "kelvin")
-            {
-                if (TemperaturaDestino.ToLower().Trim() == "f" || TemperaturaDestino.ToLower().Trim() == "fahrenheit")
-                {
-                    return CalcularKelvinFahrenheit();
-                }
-                else if (TemperaturaDestino.ToLower().Trim() == "c" || TemperaturaDestino.ToLower().Trim() == "celsius")
-                {
-                    return CalcularKelvinCelsius();
-                }
-            }
-            else if (TemperaturaOrigem.ToLower().Trim() == "f" || TemperaturaOrigem.ToLower().Trim() == "fahrenheit")
-            {
-                if (TemperaturaDestino.ToLower().Trim() == "c" || TemperaturaDestino.ToLower().Trim() == "celsius")
-                {
-                    return CalcularFahrenheitCelsius();
-                }
-                else if (TemperaturaDestino.ToLower().Trim() == "k" || TemperaturaDestino.ToLower().Trim() == "kelvin")
-                {
-                    return CalcularFahrenheitKelvin();
-                }
-            }
-            return 0.0; 
-        }
 
+            if (TemperaturaOrigem.ToLower().Trim() == "k" || TemperaturaOrigem.ToLower().Trim() == "kelvin")
+            {
+                return (TemperaturaDestino.ToLower().Trim() == "f" || TemperaturaDestino.ToLower().Trim() == "fahrenheit")
+                    ? CalcularKelvinFahrenheit()
+                    : CalcularKelvinCelsius();
+            }
+
+            if (TemperaturaOrigem.ToLower().Trim() == "f" || TemperaturaOrigem.ToLower().Trim() == "fahrenheit")
+            {
+                return (TemperaturaDestino.ToLower().Trim() == "c" || TemperaturaDestino.ToLower().Trim() == "celsius")
+                    ? CalcularFahrenheitCelsius()
+                    : CalcularFahrenheitKelvin();
+            }
+            return 0.0;
+        }
+        public void ValidarEntrada()
+        {
+            var validar = false;
+            while (validar == false)
+            {
+                try
+                {
+                    Console.Write("Temperatura Atual (C,K,f): ");
+                    TemperaturaOrigem = Console.ReadLine().ToLower().Trim();
+                    if (TemperaturaOrigem == "c" || TemperaturaOrigem == "celsius" || TemperaturaOrigem == "k" || TemperaturaOrigem == "kelvin" || TemperaturaOrigem == "f" || TemperaturaOrigem == "fahrenheit")
+                    {
+                        validar = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(ex);
+                }
+            }
+
+            validar = false;
+            while (validar == false)
+            {
+                try
+                {
+                    Console.Write("Temperatura destino (c,k,f): ");
+                    TemperaturaDestino = Console.ReadLine();
+                    if (TemperaturaDestino == "c" || TemperaturaDestino == "celsius" || TemperaturaDestino == "k" || TemperaturaDestino == "kelvin" || TemperaturaDestino == "f" || TemperaturaDestino == "fahrenheit" && TemperaturaDestino != TemperaturaOrigem)
+                    {
+                        validar = true;
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(ex);
+                }
+            }
+
+            validar = false;
+            while (validar == false)
+            {
+                try
+                {
+                    Console.Write("Valor da Temperatura: ");
+                    TemperaturaValor = Convert.ToDouble(Console.ReadLine());
+                    validar = true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+        }
     }
 }

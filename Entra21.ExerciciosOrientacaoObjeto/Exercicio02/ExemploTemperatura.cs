@@ -11,15 +11,9 @@ namespace Entra21.ExerciciosOrientacaoObjeto.Exercicio02
         public void Executar()
         {
             Temperatura temperatura = new Temperatura();
-            Console.Write("Temperatura Atual (C,K,f): ");
-            temperatura.TemperaturaOrigem = Console.ReadLine();
-            Console.Write("Temperatura destino (c,k,f): ");
-            temperatura.TemperaturaDestino = Console.ReadLine();
-            Console.Write("Valor da Temperatura: ");
-            temperatura.TemperaturaValor = Convert.ToDouble(Console.ReadLine());
-            var temperaturaAtual = temperatura.ApresentarTemperaturaConvertida();
+            temperatura.ValidarEntrada();
             Console.WriteLine("A temperatura de " + temperatura.TemperaturaOrigem +" para " + temperatura.TemperaturaDestino +
-                " é = " + temperaturaAtual);
+                " é = " + temperatura.ApresentarTemperaturaConvertida());
         }
     }
 }
