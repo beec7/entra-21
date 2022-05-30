@@ -42,23 +42,23 @@ namespace Entra21.ExerciciosOrientacaoObjeto.Exercicio02
         }
         public double ApresentarTemperaturaConvertida()
         {
-            if (TemperaturaOrigem.ToLower().Trim() == "c" || TemperaturaOrigem.ToLower().Trim() == "celsius")
+            if (TemperaturaOrigem == "c" || TemperaturaOrigem == "celsius")
             {
-                return (TemperaturaDestino.ToLower().Trim() == "f" || TemperaturaDestino.ToLower().Trim() == "fahrenheit")
+                return (TemperaturaDestino == "f" || TemperaturaDestino == "fahrenheit")
                   ? CalcularCelsiusFahrenheit()
                   : CalcularCelsiusKelvin();
             }
 
-            if (TemperaturaOrigem.ToLower().Trim() == "k" || TemperaturaOrigem.ToLower().Trim() == "kelvin")
+            if (TemperaturaOrigem == "k" || TemperaturaOrigem == "kelvin")
             {
-                return (TemperaturaDestino.ToLower().Trim() == "f" || TemperaturaDestino.ToLower().Trim() == "fahrenheit")
+                return (TemperaturaDestino == "f" || TemperaturaDestino == "fahrenheit")
                     ? CalcularKelvinFahrenheit()
                     : CalcularKelvinCelsius();
             }
 
-            if (TemperaturaOrigem.ToLower().Trim() == "f" || TemperaturaOrigem.ToLower().Trim() == "fahrenheit")
+            if (TemperaturaOrigem == "f" || TemperaturaOrigem == "fahrenheit")
             {
-                return (TemperaturaDestino.ToLower().Trim() == "c" || TemperaturaDestino.ToLower().Trim() == "celsius")
+                return (TemperaturaDestino == "c" || TemperaturaDestino == "celsius")
                     ? CalcularFahrenheitCelsius()
                     : CalcularFahrenheitKelvin();
             }
