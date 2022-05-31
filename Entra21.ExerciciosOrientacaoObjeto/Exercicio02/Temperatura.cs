@@ -30,7 +30,8 @@ namespace Entra21.ExerciciosOrientacaoObjeto.Exercicio02
         }
         public double CalcularKelvinFahrenheit()
         {
-            return (((CalcularKelvinCelsius()) * 1.8) + 32);
+            TemperaturaValor = CalcularKelvinCelsius();
+            return CalcularCelsiusFahrenheit();
         }
         public double CalcularFahrenheitCelsius()
         {

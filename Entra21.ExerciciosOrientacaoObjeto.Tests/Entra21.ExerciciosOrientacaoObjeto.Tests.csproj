@@ -21,4 +21,9 @@
     <ProjectReference Include="..\Entra21.ExerciciosOrientacaoObjeto\Entra21.ExerciciosOrientacaoObjeto.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Exercicio03\" />
+    <Folder Include="Exercicio01\" />
+  </ItemGroup>
+
 </Project>
