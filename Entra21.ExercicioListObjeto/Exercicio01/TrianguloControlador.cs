@@ -46,6 +46,7 @@ namespace Entra21.ExercicioListObjeto.Exercicio01
             }
 
         }
+
         private int ApresentarMenu()
         {
             Console.WriteLine(@" Menu:
@@ -90,8 +91,10 @@ namespace Entra21.ExercicioListObjeto.Exercicio01
 Lado número 1: {trianguloAtual.Lado1} Lado número 2: {trianguloAtual.Lado2} Lado número 3: {trianguloAtual.Lado3}
 
 ");
+
             }
         }
+
         private void CadastrarTriangulo()
         {
             Console.Write("Primeiro valor do Triangulo: ");
@@ -104,6 +107,7 @@ Lado número 1: {trianguloAtual.Lado1} Lado número 2: {trianguloAtual.Lado2} La
             trianguloServico.Adicionar(lado1, lado2, lado3);
 
         }
+
         private void EditarTriangulo()
         {
             ApresentarTriangulos();
@@ -128,6 +132,7 @@ Lado número 1: {trianguloAtual.Lado1} Lado número 2: {trianguloAtual.Lado2} La
                 Console.Write("Não encontrado");
             }
         }
+
         private void Apagar()
         {
             ApresentarTriangulos();
@@ -141,6 +146,7 @@ Lado número 1: {trianguloAtual.Lado1} Lado número 2: {trianguloAtual.Lado2} La
                : "Nenhum produto cadastrado com o codigo informado");
 
         }
+
         private void ApresentarTriangulo()
         {
             ApresentarTriangulos();
@@ -156,7 +162,7 @@ Lado número 1: {trianguloAtual.Lado1} Lado número 2: {trianguloAtual.Lado2} La
             }
 
             Console.Clear();
-Console.WriteLine($@"Código : {triangulo.Codigo}
+            Console.WriteLine($@"Código : {triangulo.Codigo}
 
 Lado número 1: {triangulo.Lado1}
 
@@ -167,7 +173,7 @@ Lado número 3: {triangulo.Lado3}
 Triangulo ?: {triangulo.ValidorTriangulo()}
 
 ");
-       
+
         }
     }
 }

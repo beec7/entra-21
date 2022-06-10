@@ -17,6 +17,7 @@
 
             return true;
         }
+
         public bool Editar(int codigoAlterar, int lado1, int lado2, int lado3)
         {
             Triangulo trianguloParaAlterar = ObterPorCodigo(codigoAlterar);
@@ -32,6 +33,7 @@
 
             return true;
         }
+
         public bool Apagar(int codigoApagar)
         {
             Triangulo trianguloParaApagar = ObterPorCodigo(codigoApagar);
@@ -40,13 +42,17 @@
             {
                 return false;
             }
+
             triangulos.Remove(trianguloParaApagar);
+
             return true;
         }
+
         public List<Triangulo> ObterTodos()
         {
             return triangulos;
         }
+
         public Triangulo ObterPorCodigo(int codigo)
         {
             for (int i = 0; i < triangulos.Count; i++)
