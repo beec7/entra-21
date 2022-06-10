@@ -1,2 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+using Entra21.ExercicioListObjeto.Exercicio01;
+
+TrianguloControlador trianguloControlador = new TrianguloControlador();
+trianguloControlador.GerenciarMenu();

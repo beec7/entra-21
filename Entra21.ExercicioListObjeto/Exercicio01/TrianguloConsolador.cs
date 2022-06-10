@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entra21.ExercicioListObjeto.Exercicio01
+﻿namespace Entra21.ExercicioListObjeto.Exercicio01
 {
-    internal class TrianguloServico
+    internal class TrianguloConsolador
     {
         private List<Triangulo> triangulos = new List<Triangulo>();
         private int CodigoAtual = 1;
