@@ -33,20 +33,94 @@ namespace Entra21.ExemploList
                 else if (codigo == 3)
                 {
                     // Menu escolhido para editar produto
-                    //Editar();
+                    Editar();
                 }
                 else if (codigo == 4)
                 {
-                    //Apagar();
+                    Apagar();
                 }
                 else if (codigo == 5)
                 {
-                    //ApresentarProduto()
+                    ApresentarProduto();
                 }
-                Thread.Sleep(1000);
+                Console.Write("Precione qualquer tecla para continuar");
+                Console.ReadKey();
+                //Thread.Sleep(1000); tempo de um segundo
             }
         }
 
+        private void ApresentarProduto()
+        {
+            ApresenterProdutos();
+            Console.WriteLine("Digite o codigo do produto a ser detalhado:");
+            int codigo = Convert.ToInt32(Console.ReadLine());
+
+            var produto = produtoServico.ObterPorCodigo(codigo);
+
+            if (produto == null)
+            {
+                Console.WriteLine("Produto nao encontrado");
+                return;
+            }
+
+            Console.Clear();
+            Console.WriteLine($@"Codigo : {produto.Codigo} 
+nome: {produto.Nome}
+preço unitario: { produto.PrecoUnitario}
+Quantidade: {produto.Quantidade}
+Total: {produto.CalcularPrecoTotal()}");
+
+        }
+        private void Apagar()
+        {
+            ApresenterProdutos();
+
+            Console.Write("Digite o codigo do produto para apagar: ");
+            int codigo = Convert.ToInt32(Console.ReadLine());
+
+            var registroApagar = produtoServico.Apagar(codigo);
+
+            Console.WriteLine(registroApagar == true
+                ? "Registro removido com sucesso"
+                : "Nenhum produto cadastrado com o codigo informado");
+        }
+        private void Editar()
+        {
+            ApresenterProdutos();
+
+            Console.Write("Código produto desejado: ");
+            var codigo = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Nome: ");
+            var nome = Console.ReadLine();
+
+            Console.Write("Quantidade: ");
+            var quantidade = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Preço unitário: ");
+            var precoUnitario = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine(@"Localizacao despovinveis: 
+Armazem
+Area Venda
+Loja\n");
+            Console.Write("Localização: ");
+            var localizacao = Console.ReadLine();
+
+            var localizacaoProduto = OterLocalizacaoProduto(localizacao);
+
+            var alterou = produtoServico.Editar(codigo, nome, precoUnitario, localizacaoProduto, quantidade);
+
+            if (alterou == true)
+            {
+                Console.WriteLine("Alterado com sucesso");
+            }
+            else
+            {
+                Console.WriteLine("nao encontrado");
+            }
+
+        }
         private int ApresentarSolicitarMenu()
         {
             Console.WriteLine(@" Menu:
@@ -88,7 +162,7 @@ namespace Entra21.ExemploList
             Console.Write("Preço unitário: ");
             var precoUnitario = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write(@"Localização disponiveis:
+            Console.WriteLine(@"Localização disponiveis:
 - Armazem
 - Area venda
 - Loja");
@@ -115,6 +189,7 @@ namespace Entra21.ExemploList
                 return ProdutoLocalizacao.AreaVenda;
             }
         }
+
         private void ApresenterProdutos()
         {
             var produtos = produtoServico.ObterTodos();
@@ -131,7 +206,7 @@ namespace Entra21.ExemploList
             {
                 var produtoAtual = produtos[i];
 
-                Console.WriteLine("Nome: " + produtoAtual.Nome + "Preço unitario: " + produtoAtual.PrecoUnitario);
+                Console.WriteLine("\nCódigo: " + produtoAtual.Codigo + "\nNome: " + produtoAtual.Nome + "\n");
             }
         }
     }
