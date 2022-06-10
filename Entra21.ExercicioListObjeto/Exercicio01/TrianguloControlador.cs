@@ -8,7 +8,7 @@ namespace Entra21.ExercicioListObjeto.Exercicio01
 {
     internal class TrianguloControlador
     {
-        private TrianguloConsolador trianguloServico = new TrianguloConsolador();
+        private TrianguloServico trianguloServico = new TrianguloServico();
         public void GerenciarMenu()
         {
             var codigo = 0;
@@ -25,19 +25,19 @@ namespace Entra21.ExercicioListObjeto.Exercicio01
                 }
                 else if (codigo == 2)
                 {
-
+                    CadastrarTriangulo();
                 }
                 else if (codigo == 3)
                 {
-
+                    EditarTriangulo();
                 }
                 else if (codigo == 4)
                 {
-
+                    Apagar();
                 }
                 else if (codigo == 5)
                 {
-
+                    ApresentarTriangulo();
                 }
 
                 Console.WriteLine("Precione qualquer tecla para Continuar");
@@ -86,11 +86,88 @@ namespace Entra21.ExercicioListObjeto.Exercicio01
             for (int i = 0; i < triangulos.Count; i++)
             {
                 var trianguloAtual = triangulos[i];
-                Console.WriteLine($@"Lado número 1: {trianguloAtual.Lado1}
-Lado número 2: {trianguloAtual.Lado2}
-Lado número 3: {trianguloAtual.Lado3}");
+                Console.WriteLine($@"Código : {trianguloAtual.Codigo}
+Lado número 1: {trianguloAtual.Lado1} Lado número 2: {trianguloAtual.Lado2} Lado número 3: {trianguloAtual.Lado3}
 
+");
             }
+        }
+        private void CadastrarTriangulo()
+        {
+            Console.Write("Primeiro valor do Triangulo: ");
+            var lado1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Segundo valor do Triangulo: ");
+            var lado2 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Terceiro valor do Triangulo: ");
+            var lado3 = Convert.ToInt32(Console.ReadLine());
+
+            trianguloServico.Adicionar(lado1, lado2, lado3);
+
+        }
+        private void EditarTriangulo()
+        {
+            ApresentarTriangulos();
+
+            Console.Write("Código do Triangulo: ");
+            var codigo = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Primeiro valor do Triangulo: ");
+            var lado1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Segundo valor do Triangulo: ");
+            var lado2 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Terceiro valor do Triangulo: ");
+            var lado3 = Convert.ToInt32(Console.ReadLine());
+
+            var alterouTriangulo = trianguloServico.Editar(codigo, lado1, lado2, lado3);
+
+            if (alterouTriangulo == true)
+            {
+                Console.Write("Alterado com sucesso");
+            }
+            else
+            {
+                Console.Write("Não encontrado");
+            }
+        }
+        private void Apagar()
+        {
+            ApresentarTriangulos();
+            Console.Write("Código para deletar:");
+            var codigo = Convert.ToInt32(Console.ReadLine());
+
+            var registroApagar = trianguloServico.Apagar(codigo);
+
+            Console.WriteLine(registroApagar == true
+               ? "Registro removido com sucesso"
+               : "Nenhum produto cadastrado com o codigo informado");
+
+        }
+        private void ApresentarTriangulo()
+        {
+            ApresentarTriangulos();
+            Console.Write("Informe o Código: ");
+            var codigo = Convert.ToInt32(Console.ReadLine());
+
+            var triangulo = trianguloServico.ObterPorCodigo(codigo);
+
+            if (triangulo == null)
+            {
+                Console.Write("Triangulo não encontrado");
+                return;
+            }
+
+            Console.Clear();
+Console.WriteLine($@"Código : {triangulo.Codigo}
+
+Lado número 1: {triangulo.Lado1}
+
+Lado número 2: {triangulo.Lado2}
+
+Lado número 3: {triangulo.Lado3}
+
+Triangulo ?: {triangulo.ValidorTriangulo()}
+
+");
+       
         }
     }
 }

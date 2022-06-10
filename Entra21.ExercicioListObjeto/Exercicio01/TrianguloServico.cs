@@ -1,6 +1,6 @@
 ﻿namespace Entra21.ExercicioListObjeto.Exercicio01
 {
-    internal class TrianguloConsolador
+    internal class TrianguloServico
     {
         private List<Triangulo> triangulos = new List<Triangulo>();
         private int CodigoAtual = 1;
