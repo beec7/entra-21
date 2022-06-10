@@ -31,6 +31,7 @@
             // Adicionar o produto instanciado na lista de produto
             produtos.Add(produto);
         }
+
         //Assinatura
         //encapsulamento + tipoRetorno + NomeMetodo(Parametros)
         public bool Editar(int codigoParaAlterar,

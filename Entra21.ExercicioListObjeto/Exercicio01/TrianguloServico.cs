@@ -21,19 +21,7 @@ namespace Entra21.ExercicioListObjeto.Exercicio01
             CodigoAtual += 1;
             triangulos.Add(triangulo);
 
-            //rever
             return true;
-
-        }
-
-        public bool Apagar(int codigoApagar)
-        {
-            Triangulo trianguloParaApagar = ObterPorCodigo(codigoApagar);
-
-            return trianguloParaApagar == null
-            ? false
-            : true;
-            //(triangulos.Remove(trianguloParaApagar));
         }
         public bool Editar(int codigoAlterar, int lado1, int lado2, int lado3)
         {
@@ -50,11 +38,21 @@ namespace Entra21.ExercicioListObjeto.Exercicio01
 
             return true;
         }
+        public bool Apagar(int codigoApagar)
+        {
+            Triangulo trianguloParaApagar = ObterPorCodigo(codigoApagar);
+
+            if (trianguloParaApagar == null)
+            {
+                return false;
+            }
+            triangulos.Remove(trianguloParaApagar);
+            return true;
+        }
         public List<Triangulo> ObterTodos()
         {
             return triangulos;
         }
-
         public Triangulo ObterPorCodigo(int codigo)
         {
             for (int i = 0; i < triangulos.Count; i++)
