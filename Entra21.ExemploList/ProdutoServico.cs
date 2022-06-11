@@ -215,7 +215,7 @@
                 somaPrecosTotais += produto.CalcularPrecoTotal();
 
             }
-
+            // calcula a media e return 
             return somaPrecosTotais / produtos.Count;
 
         }
