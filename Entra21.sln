@@ -34,8 +34,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.ExemploList", "Entra21.ExemploList\Entra21.ExemploList.csproj", "{F8395EC7-A20B-4354-A914-56CDE2E5F93F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ListaExercicio07", "ListaExercicio07", "{28E39A4A-50A0-41F5-A120-FF04C0C6D353}"
+	ProjectSection(SolutionItems) = preProject
+		\\Server\c#-noturno\leonardo.salvador\Downloads\ListaExercicio07.pdf = \\Server\c#-noturno\leonardo.salvador\Downloads\ListaExercicio07.pdf
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entra21.ExercicioListObjeto", "Entra21.ExercicioListObjeto\Entra21.ExercicioListObjeto.csproj", "{E2D5D0F0-D242-4EE2-86E0-D74497495289}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.ExercicioListObjeto", "Entra21.ExercicioListObjeto\Entra21.ExercicioListObjeto.csproj", "{E2D5D0F0-D242-4EE2-86E0-D74497495289}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
