@@ -24,6 +24,11 @@
 
         }
 
+        public List<Aluno> ObterTodosAlunos()
+        {
+            return alunos;
+        }
+
         //Obtem por Nome
         public Aluno ObterPorNome(string nome)
         {
