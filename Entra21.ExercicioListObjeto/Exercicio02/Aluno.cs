@@ -21,6 +21,7 @@ namespace Entra21.ExercicioListObjeto.Exercicio02
             var media = (Nota1 + Nota2 + Nota3) / 3;
             return media;
         }
+
         public AlunoStatus ObterStatus()
         {
             if (CalcularMedia() >= 7)
@@ -29,7 +30,7 @@ namespace Entra21.ExercicioListObjeto.Exercicio02
             }
             if (CalcularMedia() >= 4)
             {
-            return AlunoStatus.Exame;
+            return AlunoStatus.Em_exame;
             }
             return AlunoStatus.Reprovado;
         }
