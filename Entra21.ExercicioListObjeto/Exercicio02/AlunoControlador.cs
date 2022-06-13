@@ -5,6 +5,7 @@
         private AlunoServico alunoServico = new AlunoServico();
         public void GerenciarMenu()
         {
+            Console.Clear();
             var codigo = ApresentarMenu();
             while (codigo != 99)
             {
@@ -52,7 +53,7 @@
                 }
                 else if (codigo == 11)
                 {
-
+                    ObterMediaPorCodigoMatricula();
                 }
                 else if (codigo == 12)
                 {
@@ -222,7 +223,8 @@ Nota3: {alunoAtual.Nota3}
 
         private void ApagarAluno()
         {
-            Console.Write("Informe o nome do aluno para apagar: ");
+            ListarTodosAlunos();
+            Console.Write("\nInforme o nome do aluno para apagar: ");
             var nome = Console.ReadLine();
 
             var validarRemovar = alunoServico.RemoverAluno(nome);
@@ -254,7 +256,7 @@ Nota3: {alunoAtual.Nota3}
                 Console.WriteLine(aprovados[i]);
             }
         }
-        
+
         private void ListarEmExame()
         {
             var emExame = alunoServico.ObterEmExame();
@@ -277,6 +279,26 @@ Nota3: {alunoAtual.Nota3}
             {
                 Console.WriteLine(reprovado[i]);
             }
+        }
+
+        private void ObterMediaPorCodigoMatricula()
+        {
+            ListarTodosAlunos();
+            
+            Console.Write("\nInforme o código da matricula para ver a média: ");
+            var codigoMatricula = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("A média do aluno: " + alunoServico.ObterMediaPorCodigoMatricula(codigoMatricula));
+        }
+
+        private void ObterStatusPorCodigoMatricula()
+        {
+            ListarTodosAlunos();
+
+            Console.Write("\nInforme o código da matricula para ver o Status: ");
+            var codigoMatricula = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("O status do aluno: " + alunoServico.ObterStatusProCodigoMatricula(codigoMatricula));
         }
     }
 }
