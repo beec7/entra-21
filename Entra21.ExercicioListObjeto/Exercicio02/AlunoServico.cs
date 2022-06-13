@@ -6,8 +6,7 @@
         private int CodigoAtual = 0;
 
         public void AdicionarAluno(string nome, int idade,
-            string materialFavorita, int codigoMatricula,
-            double nota1, double nota2, double nota3)
+            string materialFavorita, double nota1, double nota2, double nota3)
         {
             Aluno aluno = new Aluno();
             aluno.Nome = nome;

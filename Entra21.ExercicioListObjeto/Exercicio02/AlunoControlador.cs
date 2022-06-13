@@ -8,6 +8,7 @@ namespace Entra21.ExercicioListObjeto.Exercicio02
 {
     internal class AlunoControlador
     {
+        private AlunoServico alunoServico = new AlunoServico();
         public void GerenciarMenu()
         {
             var codigo = ApresentarMenu();
@@ -17,15 +18,15 @@ namespace Entra21.ExercicioListObjeto.Exercicio02
 
                 if (codigo == 1)
                 {
-
+                    AdicionarAluno();
                 }
                 else if (codigo == 2)
                 {
-
+                    ObterListaNomes();
                 }
                 else if (codigo == 3)
                 {
-
+                    ListarTodosAlunos();
                 }
                 else if (codigo == 4)
                 {
@@ -66,6 +67,8 @@ namespace Entra21.ExercicioListObjeto.Exercicio02
 
             }
         }
+
+        //- Permitir o usuário escolher qual função deseja executar
         //- Permitir cadastrar alunos;
         //- Permitir listar o nome de todos os alunos;
         //- Permitir listar todos os alunos;
@@ -73,8 +76,6 @@ namespace Entra21.ExercicioListObjeto.Exercicio02
         //- Permitir alterar as notas do aluno;
         //- Permitir apagar um aluno com o nome do aluno que o usuário digitou;
         //- Permitir visualizar a média das idades.
-
-        //- Permitir o usuário escolher qual função deseja executar
         //- Permitir listar o nome dos aprovados;
         //- Permitir listar o nome dos reprovados;
         //- Permitir listar o nome dos alunos em exame;
@@ -121,6 +122,56 @@ namespace Entra21.ExercicioListObjeto.Exercicio02
             return codigo;
         }
 
+        private void AdicionarAluno()
+        {
+            Console.Write("Nome: ");
+            var nome = Console.ReadLine();
+            Console.Write("Idade: ");
+            var idade = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Materia Favorita: ");
+            var materiaFavorita = Console.ReadLine();
+            Console.Write("Nota1: ");
+            var nota1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Nota2: ");
+            var nota2 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Nota3: ");
+            var nota3 = Convert.ToDouble(Console.ReadLine());
 
+            alunoServico.AdicionarAluno(nome, idade, materiaFavorita, nota1, nota2, nota3);
+        }
+        private void ListarTodosAlunos()
+        {
+            var alunos = alunoServico.ObterTodosAlunos();
+            if (alunos != null)
+            {
+                for (int i = 0; i < alunos.Count; i++)
+                {
+                    var alunoAtual = alunos[i];
+                    Console.Write($@"Código matricula: {alunoAtual.CodigoMatricula}
+Nome: {alunoAtual.Nome}
+Idade: {alunoAtual.Idade}
+Materia favorita: {alunoAtual.MateriaFavorita}
+Nota1: {alunoAtual.Nota1}
+Nota2: {alunoAtual.Nota2}
+Nota3: {alunoAtual.Nota3}
+");
+
+                }
+            }
+        }
+        
+        private void ObterListaNomes()
+        {
+            var nomes = alunoServico.ObterNomes();
+            if (nomes != null)
+            {
+                for (int i = 0; i < nomes.Count; i++)
+                {
+                    Console.WriteLine(nomes[i]);
+                }
+                return;
+            }
+            Console.WriteLine("Cadaste alunos antes");
+        }
     }
 }
