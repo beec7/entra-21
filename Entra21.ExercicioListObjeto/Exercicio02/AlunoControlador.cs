@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entra21.ExercicioListObjeto.Exercicio02
+﻿namespace Entra21.ExercicioListObjeto.Exercicio02
 {
     internal class AlunoControlador
     {
@@ -30,31 +24,31 @@ namespace Entra21.ExercicioListObjeto.Exercicio02
                 }
                 else if (codigo == 4)
                 {
-
+                    EditarInformacaoBaseAluno();
                 }
                 else if (codigo == 5)
                 {
-
+                    EditarNotasAluno();
                 }
                 else if (codigo == 6)
                 {
-
+                    ApagarAluno();
                 }
                 else if (codigo == 7)
                 {
-
+                    MediaIdade();
                 }
                 else if (codigo == 8)
                 {
-
+                    ListarAprovados();
                 }
                 else if (codigo == 9)
                 {
-
+                    ListarEmExame();
                 }
                 else if (codigo == 10)
                 {
-
+                    ListarReprovados();
                 }
                 else if (codigo == 11)
                 {
@@ -69,18 +63,18 @@ namespace Entra21.ExercicioListObjeto.Exercicio02
         }
 
         //- Permitir o usuário escolher qual função deseja executar
-        //- Permitir cadastrar alunos;
-        //- Permitir listar o nome de todos os alunos;
-        //- Permitir listar todos os alunos;
-        //- Permitir editar as informações básicas do aluno;
-        //- Permitir alterar as notas do aluno;
-        //- Permitir apagar um aluno com o nome do aluno que o usuário digitou;
-        //- Permitir visualizar a média das idades.
-        //- Permitir listar o nome dos aprovados;
-        //- Permitir listar o nome dos reprovados;
-        //- Permitir listar o nome dos alunos em exame;
-        //- Permitir visualizar a média de um aluno específico;
-        //- Permitir visualizar o status de um aluno específico;
+        //1- Permitir cadastrar alunos;
+        //2- Permitir listar o nome de todos os alunos;
+        //3- Permitir listar todos os alunos;
+        //4- Permitir editar as informações básicas do aluno;
+        //5- Permitir alterar as notas do aluno;
+        //6- Permitir apagar um aluno com o nome do aluno que o usuário digitou;
+        //7- Permitir visualizar a média das idades.
+        //8- Permitir listar o nome dos aprovados;
+        //9- Permitir listar o nome dos reprovados;
+        //10- Permitir listar o nome dos alunos em exame;
+        //11- Permitir visualizar a média de um aluno específico;
+        //12- Permitir visualizar o status de um aluno específico;
         private int ApresentarMenu()
         {
             Console.WriteLine(@"   Menu:
@@ -89,7 +83,7 @@ namespace Entra21.ExercicioListObjeto.Exercicio02
 3 - Listar todos os alunos.
 4 - Editar infomações básica dos alunos.
 5 - Alterar as notas dos alunos.
-6 - Apagar um aluno no o nome.
+6 - Apagar um aluno pelo o nome.
 7 - Mostrar a média de idade dos alunos.
 8 - Lista de APROVADOS. 
 9 - Lista de EM EXAME.
@@ -159,7 +153,7 @@ Nota3: {alunoAtual.Nota3}
                 }
             }
         }
-        
+
         private void ObterListaNomes()
         {
             var nomes = alunoServico.ObterNomes();
@@ -172,6 +166,117 @@ Nota3: {alunoAtual.Nota3}
                 return;
             }
             Console.WriteLine("Cadaste alunos antes");
+        }
+
+        private void EditarInformacaoBaseAluno()
+        {
+            ListarTodosAlunos();
+
+            Console.Write("\nInforme o código de matricula: ");
+            var codigoMatricula = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Nome: ");
+            var nome = Console.ReadLine();
+            Console.Write("Idade: ");
+            var idade = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Matéria favorita: ");
+            var materiaFavorita = Console.ReadLine();
+
+            var alterou = alunoServico.EditarDadosCadastrais(codigoMatricula, nome, idade, materiaFavorita);
+
+
+            if (alterou == true)
+            {
+                Console.WriteLine("Alterado com sucesso");
+            }
+            else
+            {
+                Console.WriteLine("nao encontrado");
+            }
+
+        }
+
+        private void EditarNotasAluno()
+        {
+            ListarTodosAlunos();
+            Console.Write("Código Matriculama: ");
+            var codigoMatricula = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Nota 1:");
+            var nota1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Nota 2:");
+            var nota2 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Nota 3:");
+            var nota3 = Convert.ToDouble(Console.ReadLine());
+
+            var alterou = alunoServico.EditarNotasAluno(codigoMatricula, nota1, nota2, nota3);
+
+            if (alterou == true)
+            {
+                Console.WriteLine("Alterado com sucesso");
+            }
+            else
+            {
+                Console.WriteLine("nao encontrado");
+            }
+
+        }
+
+        private void ApagarAluno()
+        {
+            Console.Write("Informe o nome do aluno para apagar: ");
+            var nome = Console.ReadLine();
+
+            var validarRemovar = alunoServico.RemoverAluno(nome);
+
+            if (validarRemovar == true)
+            {
+                Console.Write("Aluno removido com sucesso");
+            }
+            else
+            {
+                Console.Write("Aluno não encontrado");
+            }
+
+        }
+
+        private void MediaIdade()
+        {
+            Console.WriteLine("Média de idade: " + alunoServico.ObterMediaIdades());
+        }
+
+        private void ListarAprovados()
+        {
+            var aprovados = alunoServico.ObterAprovados();
+
+            Console.WriteLine("Lista de APROVADOS");
+
+            for (int i = 0; i < aprovados.Count; i++)
+            {
+                Console.WriteLine(aprovados[i]);
+            }
+        }
+        
+        private void ListarEmExame()
+        {
+            var emExame = alunoServico.ObterEmExame();
+
+            Console.WriteLine("Lista de EM EXAME");
+
+            for (int i = 0; i < emExame.Count; i++)
+            {
+                Console.WriteLine(emExame[i]);
+            }
+        }
+
+        private void ListarReprovados()
+        {
+            var reprovado = alunoServico.ObterReprovados();
+
+            Console.WriteLine("Lista de REPROVADO");
+
+            for (int i = 0; i < reprovado.Count; i++)
+            {
+                Console.WriteLine(reprovado[i]);
+            }
         }
     }
 }
