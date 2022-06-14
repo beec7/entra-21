@@ -51,7 +51,6 @@ namespace Entra21.ExemploList
 
         private void ApresentarProduto()
         {
-            ApresenterProdutos();
             Console.WriteLine("Digite o codigo do produto a ser detalhado:");
             int codigo = Convert.ToInt32(Console.ReadLine());
 

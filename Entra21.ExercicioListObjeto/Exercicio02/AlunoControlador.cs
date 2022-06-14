@@ -5,10 +5,11 @@
         private AlunoServico alunoServico = new AlunoServico();
         public void GerenciarMenu()
         {
-            Console.Clear();
-            var codigo = ApresentarMenu();
+            var codigo = 0;
             while (codigo != 99)
             {
+                Console.Clear();
+                codigo = ApresentarMenu();
                 Console.Clear();
 
                 if (codigo == 1)
@@ -57,8 +58,10 @@
                 }
                 else if (codigo == 12)
                 {
-
+                    ObterStatusPorCodigoMatricula();
                 }
+                Console.WriteLine("\n\nAperte qualquer tecla para contunuar:");
+                Console.ReadKey();
 
             }
         }
@@ -100,14 +103,17 @@
         private int SolicitarCodigo()
         {
             var codigo = 0;
-
-            while (codigo < 1 || codigo > 16 || codigo == 99)
+            var validar = false;
+            while (validar == false)
             {
                 try
                 {
                     Console.Write("Imforme a opção desejada: ");
                     codigo = Convert.ToInt32(Console.ReadLine());
-
+                    if (codigo < 0 || codigo > 16 || codigo == 99)
+                    {
+                        validar = true;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -284,7 +290,7 @@ Nota3: {alunoAtual.Nota3}
         private void ObterMediaPorCodigoMatricula()
         {
             ListarTodosAlunos();
-            
+
             Console.Write("\nInforme o código da matricula para ver a média: ");
             var codigoMatricula = Convert.ToInt32(Console.ReadLine());
 
