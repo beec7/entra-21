@@ -49,9 +49,10 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
-            var indiceLinhaSelecionada = dataGridView1.SelectedRows[0].Index;
+            //Obter a quantidade de linhas que o usuario selecionou no DataGridView
+            var quanteidadeLinhasSelecionadas = dataGridView1.SelectedRows.Count;
 
-            if (indiceLinhaSelecionada == -1)
+            if (quanteidadeLinhasSelecionadas == 0)
             {
                 MessageBox.Show("Selecione um paciente");
                 return;
@@ -62,6 +63,7 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
             // Verifica se o usuario escolheu realmente apagar o registro
             if (opcaoEscolhida == DialogResult.Yes)
             {
+                var indiceLinhaSelecionada = dataGridView1.SelectedRows[0].Cells[1].ColumnIndex;
 
                 // remove a linha utilizando o indice do DataGridView
                 dataGridView1.Rows.RemoveAt(indiceLinhaSelecionada);
@@ -129,6 +131,11 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
 
         private void LerAquivoApresentandoPacientes()
         {
+            //Validar se aquivo não exite, consequentemente não é necessario percorrer uma lista que não existe
+            if (File.Exists("pacientes.json") == false)
+            {
+                return;
+            }
             //ler o aquivo json e armazena os pacientes na lista
             var conteudoAquivo = File.ReadAllText("pacientes.json");
             pacientes = JsonConvert.DeserializeObject<List<Paciente>>(conteudoAquivo);
