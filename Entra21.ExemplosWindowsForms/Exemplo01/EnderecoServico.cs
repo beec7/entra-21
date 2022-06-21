@@ -99,6 +99,7 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
 
         public void LerArquivo()
         {
+            // www.invertexto.com/fsens
             // verifica se o endereco nao exite
             if (File.Exists("enderecos.json") == false)
                 return;
