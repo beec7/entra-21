@@ -141,6 +141,7 @@
             this.maskedTextBoxCep.Name = "maskedTextBoxCep";
             this.maskedTextBoxCep.Size = new System.Drawing.Size(153, 23);
             this.maskedTextBoxCep.TabIndex = 7;
+            this.maskedTextBoxCep.Leave += new System.EventHandler(this.maskedTextBoxCep_Leave);
             // 
             // comboBoxPaciente
             // 

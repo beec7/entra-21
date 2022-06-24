@@ -35,7 +35,6 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
             // irá preencher o ComboBox(campo de Seleção) com os pacientes
             PreencherComboBoxComOsNomesDosPacientes();
 
-            ObterDadosCep();
         }
 
         private void PreencherComboBoxComOsNomesDosPacientes()
@@ -106,13 +105,13 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
 
         private void ObterDadosCep()
         {
-            var cep = maskedTextBoxCep.Text.Replace("-","");
+            var cep = maskedTextBoxCep.Text.Replace("-", "");
 
             // HttpClient permite fazer requisições para obter ou enviar dados para outros sistemas
             var httpClient = new HttpClient();
 
             // Executando a requisicao para o site Viacep para obter os dados do endereco do cep
-            var resultado = httpClient.GetAsync($"https://viacep.com.br/ws{cep}/json").Result;
+            var resultado = httpClient.GetAsync($"https://viacep.com.br/ws/{cep}/json").Result;
 
             // Verifica se a requisicao deu certo
 
@@ -128,5 +127,9 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
 
         }
 
+        private void maskedTextBoxCep_Leave(object sender, EventArgs e)
+        {
+            ObterDadosCep();
+        }
     }
 }
