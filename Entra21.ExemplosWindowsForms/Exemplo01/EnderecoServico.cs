@@ -10,7 +10,7 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
     internal class EnderecoServico
     {
         private List<Endereco> enderecos;
-
+     
         //Construtor: mais para frente
         public EnderecoServico()
         {
@@ -53,14 +53,14 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
         }
 
         // metodos para remover um endereco
-        public void Apagar(int codigoParaApagar)
+        public void Apagar(Endereco enderecoParaApagar)
         {
             for (int i = 0; i < enderecos.Count; i++)
             {
 
                 var endereco = enderecos[i];
 
-                if (endereco.Codigo == codigoParaApagar)
+                if (endereco.Codigo == enderecoParaApagar.Codigo)
                 {
                     enderecos.Remove(endereco);
 
@@ -91,6 +91,20 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
 
             // Retorna null pois nao encontrou o endereco com o codigo desejado
             return null;
+        }
+
+        public int ObterUltimoCodigo()
+        {
+            int ultimoCodigo = 0;
+
+            for (int i = 0; i < enderecos.Count; i++)
+            {
+                var endereco = enderecos[i];
+
+                ultimoCodigo = endereco.Codigo;
+            }
+
+            return ultimoCodigo;
         }
 
         public void SalvarAquivo()
