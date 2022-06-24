@@ -15,6 +15,8 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
         public EnderecoServico()
         {
             enderecos = new List<Endereco>();
+
+            LerArquivo();
         }
 
         // Metodo adicionar recebe como parametro o objeto de endereco completo do Form(Controller)
@@ -62,7 +64,7 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
                 {
                     enderecos.Remove(endereco);
 
-                    SalvarArquivo();
+                    SalvarAquivo();
 
                     return;
                 }

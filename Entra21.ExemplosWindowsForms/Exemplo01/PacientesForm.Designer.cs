@@ -49,9 +49,10 @@
             // 
             // buttonEditar
             // 
-            this.buttonEditar.Location = new System.Drawing.Point(392, 12);
+            this.buttonEditar.Location = new System.Drawing.Point(343, 9);
+            this.buttonEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(123, 29);
+            this.buttonEditar.Size = new System.Drawing.Size(108, 22);
             this.buttonEditar.TabIndex = 0;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
@@ -59,9 +60,10 @@
             // 
             // buttonApagar
             // 
-            this.buttonApagar.Location = new System.Drawing.Point(538, 12);
+            this.buttonApagar.Location = new System.Drawing.Point(471, 9);
+            this.buttonApagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonApagar.Name = "buttonApagar";
-            this.buttonApagar.Size = new System.Drawing.Size(111, 29);
+            this.buttonApagar.Size = new System.Drawing.Size(97, 22);
             this.buttonApagar.TabIndex = 1;
             this.buttonApagar.Text = "Apagar";
             this.buttonApagar.UseVisualStyleBackColor = true;
@@ -70,65 +72,69 @@
             // labelNome
             // 
             this.labelNome.AutoSize = true;
-            this.labelNome.Location = new System.Drawing.Point(645, 56);
+            this.labelNome.Location = new System.Drawing.Point(564, 42);
             this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(50, 20);
+            this.labelNome.Size = new System.Drawing.Size(40, 15);
             this.labelNome.TabIndex = 2;
             this.labelNome.Text = "Nome";
             // 
             // labelAltura
             // 
             this.labelAltura.AutoSize = true;
-            this.labelAltura.Location = new System.Drawing.Point(645, 109);
+            this.labelAltura.Location = new System.Drawing.Point(564, 82);
             this.labelAltura.Name = "labelAltura";
-            this.labelAltura.Size = new System.Drawing.Size(49, 20);
+            this.labelAltura.Size = new System.Drawing.Size(39, 15);
             this.labelAltura.TabIndex = 3;
             this.labelAltura.Text = "Altura";
             // 
             // textBoxNome
             // 
-            this.textBoxNome.Location = new System.Drawing.Point(645, 79);
+            this.textBoxNome.Location = new System.Drawing.Point(564, 59);
+            this.textBoxNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(324, 27);
+            this.textBoxNome.Size = new System.Drawing.Size(284, 23);
             this.textBoxNome.TabIndex = 4;
             // 
             // textBoxAltura
             // 
-            this.textBoxAltura.Location = new System.Drawing.Point(645, 132);
+            this.textBoxAltura.Location = new System.Drawing.Point(564, 99);
+            this.textBoxAltura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxAltura.Name = "textBoxAltura";
-            this.textBoxAltura.Size = new System.Drawing.Size(324, 27);
+            this.textBoxAltura.Size = new System.Drawing.Size(284, 23);
             this.textBoxAltura.TabIndex = 5;
             // 
             // labelPeso
             // 
             this.labelPeso.AutoSize = true;
-            this.labelPeso.Location = new System.Drawing.Point(645, 162);
+            this.labelPeso.Location = new System.Drawing.Point(564, 122);
             this.labelPeso.Name = "labelPeso";
-            this.labelPeso.Size = new System.Drawing.Size(39, 20);
+            this.labelPeso.Size = new System.Drawing.Size(32, 15);
             this.labelPeso.TabIndex = 7;
             this.labelPeso.Text = "Peso";
             // 
             // textBoxPeso
             // 
-            this.textBoxPeso.Location = new System.Drawing.Point(645, 183);
+            this.textBoxPeso.Location = new System.Drawing.Point(564, 137);
+            this.textBoxPeso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPeso.Name = "textBoxPeso";
-            this.textBoxPeso.Size = new System.Drawing.Size(324, 27);
+            this.textBoxPeso.Size = new System.Drawing.Size(284, 23);
             this.textBoxPeso.TabIndex = 8;
             // 
             // labelImc
             // 
             this.labelImc.AutoSize = true;
-            this.labelImc.Location = new System.Drawing.Point(645, 213);
+            this.labelImc.Location = new System.Drawing.Point(564, 160);
             this.labelImc.Name = "labelImc";
-            this.labelImc.Size = new System.Drawing.Size(42, 20);
+            this.labelImc.Size = new System.Drawing.Size(35, 15);
             this.labelImc.TabIndex = 9;
             this.labelImc.Text = "IMC: ";
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(828, 213);
+            this.buttonSalvar.Location = new System.Drawing.Point(725, 183);
+            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(141, 29);
+            this.buttonSalvar.Size = new System.Drawing.Size(123, 22);
             this.buttonSalvar.TabIndex = 10;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
@@ -145,13 +151,14 @@
             this.ColumnAltura,
             this.ColumnPeso,
             this.ColumnImc});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 56);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 42);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(603, 415);
+            this.dataGridView1.Size = new System.Drawing.Size(528, 311);
             this.dataGridView1.TabIndex = 11;
             // 
             // ColumnCodigo
@@ -196,9 +203,9 @@
             // 
             // PacientesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 515);
+            this.ClientSize = new System.Drawing.Size(871, 386);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.labelImc);
@@ -210,9 +217,11 @@
             this.Controls.Add(this.labelNome);
             this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.buttonEditar);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PacientesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cadastro de paciente";
+            this.Load += new System.EventHandler(this.PacientesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

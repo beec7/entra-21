@@ -188,5 +188,10 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
             dataGridView1.ClearSelection();
 
         }
+
+        private void PacientesForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

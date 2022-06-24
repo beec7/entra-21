@@ -57,16 +57,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ColumnCodigo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnEnderecoCompleto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnCep.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnPaciente.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonEndereco.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        6QAAAOkBVJIUSwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHpSURBVFhH1dYx
+        SBZxGMfxN0slkAjUpCGhvbZIIbQCocmxaAskaisCwalJwUVtiCghCW0Ll2hosKm5ofaIwMEhEC0oikq/
+        P3yfl4e/z+vde3eI/uADcv/7P//nPe9/d7XDnKN4gPto04H9TBdeY6vuLU5gX9KPT7DFzUecgXIKY7hT
+        dxWVZABrSBc3GruIJXfMnEWp3MQvpIVTP7GaHJNzKJQjmMA/pEVbUaiBTkSXs4iWG+jBe0TFimipgfP4
+        iqhQUSPIlWvYQFSkjB8YxZ7RU+0vogJGN+MrXIeulLbmXXxAdL6n2lpjV47hKaJJ3jcMI4p2yzjy7Bat
+        pTUbeYToRO8PBuHTjeM7fzbyENH81BwayfPrn8HSjmXo+G/cg0Vjn5HOTz1BIx24BN2pbxBN0LjlNvyY
+        /rd6R1gm4ceNamsN1VKjYZpdjZOwRAv4BvXYTsdFtTPTrIE+WC7A75Yv8PfCLfi5plQDN+BzBS/xGPYa
+        trxAVKNUAyvIE+2M74hqlGpAhpCVKURzpXQD77BXerGJaK6UbkDSe8FnEdEcU0kD+uzyW9JyGf8RzTGV
+        NCAL8NFXcp6nX2UNiN6GlueIzklV2sA69EiedseyVNpAEYejgVlEk6swg8ychj5Q5iumDxDVPkip1bYB
+        pnv0AlLP+WYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="buttonPacientes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        3QAAAN0BcFOiBwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAINSURBVFhHvde7
+        a1RBFMfxwQgKQfGRRlDRwkJYBdEqipUYxCoiqzZia2WjKNgmWAmmEBQkFgmopPMBgpVgoyL4BygiCLaK
+        b3xcvyeZrOfO/e1mZ2E88Cnuj5lzhuxyJxuqqspCjWIKj/EBrzCHcxhWe3qRoUKtxGX8hgXKa+xX+7uR
+        YYpagRfww7r5g5OqjyLDFHUpNu/XR2xWvVIy9Kg9+AU/oB8PVb+UDD1qwjXNYR/FKtXTk6FH3Y8NB7FP
+        9fRk6FFvXcNcp1VPT4Ye9dQ1zDWuenoy9KhrrmGuLaqnJ0OPOuUa5niv+qVk6FFDeBab5mirfikZpqjt
+        +BYb9+OO6qPIUKEO4l0c0MssVqseigy7odbgJr7CDzV2ES35rU/JcBG1FUdxHi2X2/fCPpbjOID1yb7d
+        uIBx9LwTdBjCWlyHvU4tWDSNEbXHUBtwG36P3SNXIF/LzWDh3n8J38SzP/8NtNHCTpzADH5A7TFPsLwx
+        rxGEcDVuKGGyMa/2EMJG/IyLS/iCdbWZtYfBr94cZ2szaw8hPHcLS3lUm+mGD2OQ/3xyfcYydYAdccH/
+        sEkd4LBbUNpedYBjbkFpY+oA9jLxi0o6pA6wyy0obZs6gP36+R4XlPQJQ40DxENcjItKOlObWXvgssC9
+        uLCEW+i8A+Zn+odOGMIRPMAbpFdyDvslbf+o3EXni/dPFf4CubzKy3uYbLAAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>
