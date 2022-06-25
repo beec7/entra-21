@@ -64,6 +64,7 @@
             this.dataGridViewEnderecos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewEnderecos.Size = new System.Drawing.Size(586, 397);
             this.dataGridViewEnderecos.TabIndex = 0;
+            this.dataGridViewEnderecos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEnderecos_CellDoubleClick);
             // 
             // ColumnCodigo
             // 
@@ -210,6 +211,7 @@
             this.Controls.Add(this.dataGridViewEnderecos);
             this.Name = "EnderecosForm";
             this.Text = "EnderecosForm";
+            this.Load += new System.EventHandler(this.EnderecosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEnderecos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
