@@ -4,19 +4,19 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
 {
     public partial class PacientesForm : Form
     {
-        private List<Paciente> pacientes;
+        private PacienteServico pacienteServico;
 
-        private int codigoAtual = 0;
-        private int indiceLinhaSelecionada = -1;
-        private int codigoSelecionado = -1;
+
         public PacientesForm()
         {
             InitializeComponent();
-            // cria uma lisya de objetos para armazenar os pacientes
-            pacientes = new List<Paciente>();
+
+            //Instanciar um Objeto do PacienteServico, que é reponsavel por gerenciar os dados dos pacientes
+            pacienteServico = new PacienteServico();
 
             // ler do aquivo json os pacientes cadastrados anteriormente
-            LerAquivoApresentandoPacientes();
+            ListarPacientes();
+
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
@@ -26,23 +26,13 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
             var altura = Convert.ToDouble(textBoxAltura.Text.Trim());
             var peso = Convert.ToDouble(textBoxPeso.Text.Trim());
 
-            var imc = CalcularImc(peso, altura);
-
             // verifica se esta em modo de adicao
-            if (indiceLinhaSelecionada == -1)
+            if (dataGridView1.SelectedRows.Count == 0)
             {
-                dataGridView1.Rows.Add(new object[]{
-                ++codigoAtual,nome,altura,peso,imc
-            });
-                AdicionarPacienteSalvandoNoArquivo(codigoAtual, nome, altura, peso);
+                AdicionarPaciente(nome, altura, peso);
 
                 return;
             }
-
-            dataGridView1.Rows[indiceLinhaSelecionada].Cells[1].Value = nome;
-            dataGridView1.Rows[indiceLinhaSelecionada].Cells[2].Value = altura.ToString();
-            dataGridView1.Rows[indiceLinhaSelecionada].Cells[3].Value = peso.ToString();
-            dataGridView1.Rows[indiceLinhaSelecionada].Cells[4].Value = imc.ToString();
 
             EditarDados(nome, altura, peso);
         }
@@ -63,24 +53,21 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
             // Verifica se o usuario escolheu realmente apagar o registro
             if (opcaoEscolhida == DialogResult.Yes)
             {
-                var indiceLinhaSelecionada = dataGridView1.SelectedRows[0].Cells[1].ColumnIndex;
 
-                // remove a linha utilizando o indice do DataGridView
-                dataGridView1.Rows.RemoveAt(indiceLinhaSelecionada);
+                //Obtem o codigo do paciente escolhido para apagar o registro
+                var linhaSelecionado = dataGridView1.SelectedRows[0];
+                var codigoSelecionado = Convert.ToInt32(linhaSelecionado.Cells[0].Value);
 
-                //Remove o paciente da lista de pacientes
-                pacientes.RemoveAt(indiceLinhaSelecionada);
+                // Apaga o paciente da lista de paciente e atualiza a lista pacientes.JSON
+                pacienteServico.Apagar(codigoSelecionado);
 
-                // atualiza o aquivo com lista de pacientes sem o paciente removido
-                SalvarEmAquivo();
+                LimparCampos();
             }
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            indiceLinhaSelecionada = dataGridView1.SelectedRows[0].Index;
-
-            if (indiceLinhaSelecionada == -1)
+            if (dataGridView1.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Selecione um paciente");
                 return;
@@ -88,7 +75,6 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
 
             var linhaSelecionada = dataGridView1.SelectedRows[0];
 
-            codigoSelecionado = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
             var nome = linhaSelecionada.Cells[1].Value.ToString();
             var altura = Convert.ToDouble(linhaSelecionada.Cells[2].Value);
             var peso = Convert.ToDouble(linhaSelecionada.Cells[3].Value);
@@ -100,47 +86,53 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
 
         private void EditarDados(string nome, double altura, double peso)
         {
-            pacientes[indiceLinhaSelecionada].Nome = nome;
-            pacientes[indiceLinhaSelecionada].Alutera = altura;
-            pacientes[indiceLinhaSelecionada].Peso = peso;
+            //Instanciar o paciente com os dados preenchidos na tela, para alterar o existente
+            var paciente = new Paciente();
+            paciente.Nome = nome;
+            paciente.Peso = peso;
+            paciente.Alutera = altura;
 
-            SalvarEmAquivo();
+            //Obter o código do registro escolhido para alterar
+            var linhaSelecionada = dataGridView1.SelectedRows[0];
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            paciente.Codigo = codigo;
+
+            // Alteraro o paciente na lista de pacientes e atualizando o aquivo JSON
+            pacienteServico.Editar(paciente);
 
             LimparCampos();
 
+            ListarPacientes();
         }
 
-        private void AdicionarPacienteSalvandoNoArquivo(int codigo, string nome, double altura, double peso)
+        private void AdicionarPaciente(string nome, double altura, double peso)
         {
             var paciente = new Paciente()
             {
-                Codigo = codigo,
+                Codigo = pacienteServico.ObterUltrimoCodigo() + 1,
                 Nome = nome,
                 Alutera = altura,
                 Peso = peso
             };
-            //var paciente = new Paciente();
-            //paciente.Codigo = codigo;
-            //paciente = paciente;
-            pacientes.Add(paciente);
 
-            SalvarEmAquivo();
+            // Adicionar na lista e atualizar o arquivo JSON
+
+            pacienteServico.Cadastrar(paciente);
 
             LimparCampos();
+
+            ListarPacientes();
         }
 
-        private void LerAquivoApresentandoPacientes()
+        private void ListarPacientes()
         {
-            //Validar se aquivo não exite, consequentemente não é necessario percorrer uma lista que não existe
-            if (File.Exists("pacientes.json") == false)
-            {
-                return;
-            }
-            //ler o aquivo json e armazena os pacientes na lista
-            var conteudoAquivo = File.ReadAllText("pacientes.json");
-            pacientes = JsonConvert.DeserializeObject<List<Paciente>>(conteudoAquivo);
 
-            int maiorCodigo = 0;
+            //Obter a lista dos pacientes para listar para o usuario
+            var pacientes = pacienteServico.ObterTodos();
+
+            //Remover todos os itens da tabela do DataGridView, pois sera adicionado novamente
+            dataGridView1.Rows.Clear();
+
 
             for (int i = 0; i < pacientes.Count; i++)
             {
@@ -148,50 +140,29 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
 
                 dataGridView1.Rows.Add(new object[]
                 {
-                    paciente.Codigo, paciente.Nome,
-                    paciente.Alutera, paciente.Peso, CalcularImc(paciente.Peso, paciente.Alutera)
+                    paciente.Codigo,
+                    paciente.Nome,
+                    paciente.Alutera,
+                    paciente.Peso,
+                    paciente.ObterImc()
                 });
-
-                if (paciente.Codigo > maiorCodigo)
-                {
-                    maiorCodigo = paciente.Codigo;
-                }
-                //Valida se consegui encontrar algum codigo, caso contrario n deve atualizar o codigo
-                if (maiorCodigo != int.MinValue)
-                {
-                    codigoAtual = maiorCodigo;
-                }
             }
-        }
 
-        private double CalcularImc(double peso, double altura)
-        {
-            return peso / Math.Pow(altura, 2);
-        }
-
-        private void SalvarEmAquivo()
-        {
-            //Convert uma lista de objetos em uma string contendo o json
-            var pacientesEmJsom = JsonConvert.SerializeObject(pacientes);
-            var caminho = "pacientes.json";
-            // salva a string contendo o JSON em um aquivo no formato JSON
-            File.WriteAllText(caminho, pacientesEmJsom);
+            dataGridView1.ClearSelection();
         }
 
         private void LimparCampos()
         {
-            textBoxAltura.Text = "";
-            textBoxNome.Text = "";
-            textBoxPeso.Text = "";
-
-            indiceLinhaSelecionada = -1;
+            textBoxAltura.Clear();
+            textBoxNome.Text.Clone();
+            textBoxPeso.Text.Clone();
             dataGridView1.ClearSelection();
 
         }
 
         private void PacientesForm_Load(object sender, EventArgs e)
         {
-
+            ListarPacientes();
         }
     }
 }

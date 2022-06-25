@@ -11,9 +11,11 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
     {
         private List<Paciente> pacientes;
 
+
         public PacienteServico()
         {
             pacientes = new List<Paciente>();
+
 
             LerArquivos();
         }
@@ -54,6 +56,73 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
             //Converte JSON para lista de objetos de pacientes
             pacientes = JsonConvert.DeserializeObject<List<Paciente>>(pacientesJson);
 
+        }
+
+        public int ObterUltrimoCodigo()
+        {
+            int ultimoCodigo = 0;
+
+            for (int i = 0; i < pacientes.Count; i++)
+            {
+                var paciente = pacientes[i];
+
+                ultimoCodigo = paciente.Codigo;
+            }
+
+            return ultimoCodigo;
+        }
+
+        public void Editar(Paciente pacienteparaEditar)
+        {
+            var paciente = ObterPorCodigo(pacienteparaEditar.Codigo);
+
+            paciente.Nome = pacienteparaEditar.Nome;
+            paciente.Alutera = pacienteparaEditar.Alutera;
+            paciente.Peso = pacienteparaEditar.Peso;
+
+            SalvarArquivo();
+        }
+
+        public void Cadastrar(Paciente paciente)
+        {
+            pacientes.Add(paciente);
+            SalvarArquivo();
+        }
+
+        public Paciente ObterPorCodigo(int codigo)
+        {
+            for (int i = 0; i < pacientes.Count; i++)
+            {
+                var paciente = pacientes[i];
+
+                if (paciente.Codigo == codigo)
+                    return paciente;
+
+            }
+            return null;
+        }
+
+        public void Apagar(int codigo)
+        {
+            for (int i = 0; i < pacientes.Count; i++)
+            {
+                var paciente = pacientes[i];
+
+                if (paciente.Codigo == codigo)
+                {
+                    pacientes.Remove(paciente);
+
+                    SalvarArquivo();
+
+                    return;
+                }
+            }
+        }
+
+        private void SalvarArquivo()
+        {
+            var pacientesJson = JsonConvert.SerializeObject(pacientes);
+            File.WriteAllText("pacientes.json", pacientesJson);
         }
     }
 }
