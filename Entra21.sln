@@ -42,7 +42,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.ExercicioListObjeto
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExemploWindowaForm", "ExemploWindowaForm", "{50E90806-7F74-497F-BCE9-F7C37F57B163}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entra21.ExemplosWindowsForms", "Entra21.ExemplosWindowsForms\Entra21.ExemplosWindowsForms.csproj", "{5F6303D5-EC58-4DF6-9037-20486588D686}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.ExemplosWindowsForms", "Entra21.ExemplosWindowsForms\Entra21.ExemplosWindowsForms.csproj", "{5F6303D5-EC58-4DF6-9037-20486588D686}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlExemplo", "SqlExemplo", "{5DE54ABA-2E03-4486-B4E9-D4DAD9BCA4A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
