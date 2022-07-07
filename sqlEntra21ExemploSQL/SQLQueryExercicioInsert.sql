@@ -58,7 +58,14 @@ UPDATE enderecos SET cep = '35.162-484', complemento = 'lado impar' WHERE id = 5
 
 UPDATE enderecos SET logradouro = 'Rua Itu', complemento = 'lado par' WHERE id = 6;
 
+UPDATE enderecos SET complemento = 'lado par' WHERE id = 8;
+
 UPDATE enderecos SET cidade = 'Rio Branc', cep = '69.900-162' WHERE id = 9;
+
+UPDATE enderecos SET complemento = 'lado par' WHERE id = 10;
+
+UPDATE enderecos SET complemento = 'lado impar' WHERE id = 11;
+
 -------------------------------------------------------------------------------------------------------
 
 CREATE TABLE champions (
@@ -83,3 +90,15 @@ INSERT INTO champions (nome, descricao, habilidade_1, habilidade_3, habilidade_4
 INSERT INTO champions (nome, descricao, habilidade_1, habilidade_2, habilidade_3, habilidade_4, habilidade_5) VALUES ('Diana', 'o Escárnio da Lua', 'Espada de Prata Lunar', 'Golpe Crescente', 'Cascata Lívida', 'Colapso Minguante', 'Zênite Lunar');
 INSERT INTO champions (nome, descricao, habilidade_1, habilidade_2, habilidade_3, habilidade_4, habilidade_5) VALUES ('Annie', 'a Criança Sombria', 'Piromania', 'Desintegrar', 'Incinerar', 'Escudo Fundido', 'Invocar: Tibbers');
 INSERT INTO champions (nome, habilidade_1, habilidade_2, habilidade_3, habilidade_4, habilidade_5) VALUES ('Aatrox', 'Poço de Sangue', 'Voo Sombrio', 'Sede de Sangue / Preço em Sangue', 'Lâminas da Aflição', 'Massacre');
+
+SELECT id, nome, descricao, habilidade_1, habilidade_2, habilidade_3, habilidade_4, habilidade_5 FROM champions
+
+UPDATE champions SET descricao = 'o Imperdoável' WHERE id = 2;
+
+UPDATE champions SET habilidade_1 = 'Ataque Duplo',habilidade_2 = 'Ataque Alpha', habilidade_3 = 'Meditar' , habilidade_4 = 'Estilo Wuju', habilidade_5 = 'Highlander' WHERE id = 3;
+
+UPDATE champions SET habilidade_5 = 'Fúria do Dragão' WHERE id = 5;
+
+UPDATE champions SET habilidade_2 = 'Quebra-Cofres' WHERE id = 6;
+
+UPDATE champions SET descricao = 'a Espada Darkin' WHERE id =9
