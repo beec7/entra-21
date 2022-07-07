@@ -109,3 +109,4 @@ SELECT id, titulo
 --pagina = 1
 --quantidadePorPagina = 2
 -- (pagina -2) / quantidadePorPagina
+--
