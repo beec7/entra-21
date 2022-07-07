@@ -36,4 +36,4 @@ CREATE TABLE enderecos (
 	complemento TEXT
 	);
 
-INSERT INTO enderecos(estado, cidade, bairro, cep, logradouro, numero, complemento) VALUES()
+INSERT INTO enderecos(estado, cidade, bairro, cep, logradouro, numero, complemento) VALUES('','','','','','','')
