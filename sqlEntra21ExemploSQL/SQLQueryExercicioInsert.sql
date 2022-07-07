@@ -50,6 +50,15 @@ INSERT INTO enderecos (estado, cidade, bairro, cep, logradouro, numero) VALUES('
 
 SELECT id, estado, cidade, bairro, cep, logradouro, numero, complemento FROM enderecos
 
+UPDATE enderecos SET logradouro = 'Biguaçu', complemento = 'de 2222 a 3046 - lado par' WHERE id = 2;
+
+UPDATE enderecos SET cidade = 'Salvador', complemento = 'lado impar' WHERE id = 4;
+
+UPDATE enderecos SET cep = '35.162-484', complemento = 'lado impar' WHERE id = 5; 
+
+UPDATE enderecos SET logradouro = 'Rua Itu', complemento = 'lado par' WHERE id = 6;
+
+UPDATE enderecos SET cidade = 'Rio Branc', cep = '69.900-162' WHERE id = 9;
 -------------------------------------------------------------------------------------------------------
 
 CREATE TABLE champions (
