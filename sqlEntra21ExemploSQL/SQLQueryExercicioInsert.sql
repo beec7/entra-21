@@ -95,6 +95,8 @@ SELECT id, nome, descricao, habilidade_1, habilidade_2, habilidade_3, habilidade
 
 UPDATE champions SET descricao = 'o Imperdoável' WHERE id = 2;
 
+SELECT * FROM pokemons
+
 UPDATE champions SET habilidade_1 = 'Ataque Duplo',habilidade_2 = 'Ataque Alpha', habilidade_3 = 'Meditar' , habilidade_4 = 'Estilo Wuju', habilidade_5 = 'Highlander' WHERE id = 3;
 
 UPDATE champions SET habilidade_5 = 'Fúria do Dragão' WHERE id = 5;
@@ -102,3 +104,9 @@ UPDATE champions SET habilidade_5 = 'Fúria do Dragão' WHERE id = 5;
 UPDATE champions SET habilidade_2 = 'Quebra-Cofres' WHERE id = 6;
 
 UPDATE champions SET descricao = 'a Espada Darkin' WHERE id =9
+
+
+
+SELECT id, nome, descricao, habilidade_1, habilidade_2, habilidade_3, habilidade_4, habilidade_5 FROM champions
+
+
