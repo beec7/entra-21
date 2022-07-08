@@ -1,4 +1,5 @@
 
+
 DROP TABLE cidades;
 CREATE TABLE cidades (
 	estado CHAR(2),
@@ -5489,3 +5490,34 @@ INSERT INTO cidades VALUES
 ('TO', 'Tupiratins'),
 ('TO', 'Wanderlândia'),
 ('TO', 'Xambioá');
+
+--Tabela de cidades:
+--Utilize o arquivo cidades_estrutura_insert.sql
+
+--1. Selecione o estado e cidade.
+SELECT estado, cidade FROM cidades
+
+--2. Selecione as cidades que começam com a letra A.
+SELECT estado, cidade FROM cidades WHERE cidade LIKE 'A%'
+
+--3. Selecione as cidades que contenham no ‘apar’ em qualquer parte do nome
+SELECT estado, cidade FROM cidades WHERE cidade LIKE '%apar%'
+
+--4. Selecione as cidades que começam com a letra W.
+SELECT estado, cidade FROM cidades WHERE cidade LIKE 'w%'
+
+--5. Selecione o estado e a cidade que a cidade termina com ‘tuba’ ordenando pelo estado em ordem
+--decrescente.
+SELECT estado, cidade FROM cidades WHERE cidade LIKE '%tuba' ORDER BY estado ASC 
+
+--6. Selecione a cidade que o nome da cidade contenha mais que 15 caracteres, ordenando pelo quantidade de
+--caracteres.
+SELECT estado, cidade, LEN(cidade) AS 'Quantidade de caracter' FROM cidades WHERE LEN(cidade) > 15 ORDER BY LEN(cidade) ASC
+
+--7. Contabilize a quantidade de cidades do estado de SC.
+SELECT COUNT(cidade) FROM cidades WHERE estado = 'SC'
+
+--8. Contabilize a quantidade de cidades do estado de SP.
+--
+--9. Selecione o nome da cidade com a quantidade de caracteres, quando o nome da cidade conter 10
+--caracteres.
