@@ -5515,9 +5515,13 @@ SELECT estado, cidade FROM cidades WHERE cidade LIKE '%tuba' ORDER BY estado ASC
 SELECT estado, cidade, LEN(cidade) AS 'Quantidade de caracter' FROM cidades WHERE LEN(cidade) > 15 ORDER BY LEN(cidade) ASC
 
 --7. Contabilize a quantidade de cidades do estado de SC.
-SELECT COUNT(cidade) FROM cidades WHERE estado = 'SC'
+SELECT COUNT(estado) FROM cidades WHERE estado = 'SC'
 
 --8. Contabilize a quantidade de cidades do estado de SP.
---
+SELECT COUNT(estado) FROM cidades WHERE estado = 'SP'
+
+
 --9. Selecione o nome da cidade com a quantidade de caracteres, quando o nome da cidade conter 10
 --caracteres.
+SELECT cidade, LEN(cidade) FROM cidades WHERE LEN(cidade) = 10
+

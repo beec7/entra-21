@@ -765,10 +765,10 @@ SELECT TOP(1) nome, categoria, ataque FROM pokemons ORDER BY ataque ASC
 SELECT ataque, especial_ataque, nome, defesa, especial_defesa FROM pokemons ORDER BY ataque ASC
 
 --10. Selecione a média dos ataques.
-SELECT AVG(ataque) AS 'Média ataque dos pokemons' FROM pokemons
+SELECT AVG (CAST (ataque AS DECIMAL)) AS 'Média ataque dos pokemons' FROM pokemons
 
 --11. Selecione a somatória dos ataques.
 SELECT SUM(ataque) AS 'Soma dos ataques dos pokemons' FROM pokemons
 
 --12. Selecione a média dos ataques especiais quando o nome do pokemon começar com ‘P’.
-SELECT AVG(especial_ataque) FROM pokemons WHERE nome LIKE ('P%')
+SELECT AVG (CAST (especial_ataque AS DECIMAL)) FROM pokemons WHERE nome LIKE ('P%')
