@@ -2794,8 +2794,7 @@ SELECT COUNT(data_nascimento) FROM alunos WHERE YEAR(data_nascimento) = '1996'
 
 --22. Selecione a quantidade de pessoas de pessoas que nasceram no dia dois do mês de fevereiro do ano 1964
 --ou 1994.
-SELECT COUNT(data_nascimento) FROM alunos WHERE YEAR(data_nascimento) = '1996'
-
+SELECT COUNT(data_nascimento) FROM alunos WHERE DAY(data_nascimento) = '02' AND MONTH(data_nascimento) = '02' AND YEAR(data_nascimento) = '1964' OR YEAR(data_nascimento) = 1994;
 
 
 --23. Selecione o nick e a nota 4 do aluno que a nota 2 está entre 5.0 e 5.99.
