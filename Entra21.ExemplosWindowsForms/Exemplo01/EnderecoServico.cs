@@ -70,6 +70,24 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
                 }
             }
         }
+
+        public void SalvarAquivo()
+        {
+            var enderecosEmJson = JsonConvert.SerializeObject(enderecos);
+            File.WriteAllText("enderecos.json",enderecosEmJson);
+        }
+
+        public void LerArquivo()
+        {
+            // www.invertexto.com/fsens
+            // verifica se o endereco nao exite
+            if (File.Exists("enderecos.json") == false)
+                return;
+
+            // ler o aquivo json e converte para uma lista de objetos de enderecos
+            var enderecosEmJson = File.ReadAllText("enderecos.json");
+            enderecos = JsonConvert.DeserializeObject<List<Endereco>>(enderecosEmJson);
+        }
         
         // metodos que permite listar todos os enderecos
         public List<Endereco> ObterTodos()
@@ -107,22 +125,6 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
             return ultimoCodigo;
         }
 
-        public void SalvarAquivo()
-        {
-            var enderecosEmJson = JsonConvert.SerializeObject(enderecos);
-            File.WriteAllText("enderecos.json",enderecosEmJson);
-        }
 
-        public void LerArquivo()
-        {
-            // www.invertexto.com/fsens
-            // verifica se o endereco nao exite
-            if (File.Exists("enderecos.json") == false)
-                return;
-
-            // ler o aquivo json e converte para uma lista de objetos de enderecos
-            var enderecosEmJson = File.ReadAllText("enderecos.json");
-            enderecos = JsonConvert.DeserializeObject<List<Endereco>>(enderecosEmJson);
-        }
     }
 }

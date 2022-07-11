@@ -2787,19 +2787,31 @@ SELECT nome FROM alunos WHERE cor_preferida = 'ouro' OR cor_preferida = 'amarelo
 SELECT nome, YEAR(data_nascimento) FROM alunos
 
 --20. Selecione o nick e o mês de nascimento quando o mês de nascimento for maior que 6.
-SELECT nome, MONTH(data_nascimento) FROM alunos
+SELECT nome, data_nascimento FROM alunos WHERE MONTH(data_nascimento) >= 6
+
+SELECT nome, data_nascimento FROM alunos WHERE MONTH(data_nascimento) >= 3
+
+SELECT data_nascimento FROM alunos ORDER BY MONTH(data_nascimento) ASC
 
 --21. Selecione a quantidade de pessoas que nasceram no ano de 1996
 SELECT COUNT(data_nascimento) FROM alunos WHERE YEAR(data_nascimento) = '1996'
 
 --22. Selecione a quantidade de pessoas de pessoas que nasceram no dia dois do mês de fevereiro do ano 1964
 --ou 1994.
-SELECT COUNT(data_nascimento) FROM alunos WHERE DAY(data_nascimento) = '02' AND MONTH(data_nascimento) = '02' AND YEAR(data_nascimento) = '1964' OR YEAR(data_nascimento) = 1994;
+SELECT COUNT(data_nascimento) FROM alunos WHERE DAY(data_nascimento) = '02' AND MONTH(data_nascimento) = '02' AND YEAR(data_nascimento) = '1964' OR YEAR(data_nascimento) = '1994';
 
 
 --23. Selecione o nick e a nota 4 do aluno que a nota 2 está entre 5.0 e 5.99.
+SELECT nick, nota_4 FROM alunos WHERE nota_2 >= 5.00 and nota_2 <= 5.99
 
 --24. Apresentar a média da aluna Josefina.
+SELECT nome, ((nota_1 + nota_2 + nota_3 + nota_4 )/4) AS 'Média' FROM alunos WHERE nome LIKE 'josefina%'
+
 --25. Apresentar nome, nick, nota 1, nota 2, nota 3, nota 4, quando o nome conter Justino e o signo começar com
 --‘A’.
+SELECT nome, nick, nota_1, nota_2, nota_3, nota_4 FROM alunos WHERE nome LIKE '%Justino%' AND signo LIKE 'A%'
+
 --26. Apresentar a média das médias.
+SELECT AVG(CAST((nota_1 + nota_2 + nota_3 + nota_4)/4 AS DECIMAL)) FROM alunos
+
+-------------------------------------------------------------------------------------------------------------------------------------

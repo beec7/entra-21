@@ -20,6 +20,7 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
         //Construtor: construir o objeto que esta sendo istanciado com as devidas informações ou rotinas
         public EnderecosForm()
         {
+            //Inportante fazer antes de tudo
             InitializeComponent();
 
             enderecoServico = new EnderecoServico();
