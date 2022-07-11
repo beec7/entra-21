@@ -738,37 +738,63 @@ INSERT INTO pokemons (nome, codigo, categoria, descricao, altura, peso, hp, ataq
 
 
 --1. Selecione todas as colunas.
-SELECT id, nome, codigo, categoria, altura, peso, hp, ataque, defesa, especial_ataque, especial_defesa, velocidade, descricao FROM pokemons
+SELECT id, nome, codigo, categoria, altura, peso, hp, ataque, defesa, especial_ataque, especial_defesa, velocidade, descricao FROM pokemons;
 
 --2. Selecione o ataque, ataque especial, defesa e defesa especial.
-SELECT ataque, especial_ataque, defesa, especial_defesa FROM pokemons
+SELECT ataque, especial_ataque, defesa, especial_defesa FROM pokemons;
 
 --3. Selecione nome, categoria e ataque ordenado pelo ataque em ordem crescente.
-SELECT nome, categoria, ataque FROM pokemons ORDER BY ataque ASC
+SELECT nome, categoria, ataque FROM pokemons ORDER BY ataque ASC;
 
 --4. Selecione altura, peso, com o cálculo do imc.
-SELECT altura, peso, (peso/(altura + altura)) AS 'IMC' FROM pokemons
+SELECT altura, peso, (peso/(altura + altura)) AS 'IMC' FROM pokemons;
 
 --5. Selecione altura, peso, com o cálculo do imc ordenando o imc em ordem decrescente.
-SELECT altura, peso , (peso/(altura+altura)) AS IMC FROM pokemons ORDER BY IMC DESC
+SELECT altura, peso , (peso/(altura+altura)) AS IMC FROM pokemons ORDER BY IMC DESC;
 
 --6. Selecione nome e o tamanho do nome em ordem decrescente pelo nome.
-SELECT nome, LEN(nome) AS 'Tamanhado nome' FROM pokemons ORDER BY nome DESC
+SELECT nome, LEN(nome) AS 'Tamanhado nome' FROM pokemons ORDER BY nome DESC;
 
 --7. Selecione nome, descrição, quando o nome contiver mais que 10 caracteres.
 SELECT nome, descricao FROM pokemons WHERE LEN(nome) >= 10;
 
 --8. Selecione nome, categoria, e ataque do pokemon que contém o menor valor de ataque.
-SELECT TOP(1) nome, categoria, ataque FROM pokemons ORDER BY ataque ASC
+SELECT TOP(1) nome, categoria, ataque FROM pokemons ORDER BY ataque ASC;
 
 --9. Selecione o ataque, ataque especial, nome, defesa e defesa especial ordenando pelo ataque.
-SELECT ataque, especial_ataque, nome, defesa, especial_defesa FROM pokemons ORDER BY ataque ASC
+SELECT ataque, especial_ataque, nome, defesa, especial_defesa FROM pokemons ORDER BY ataque ASC;
 
 --10. Selecione a média dos ataques.
-SELECT AVG (CAST (ataque AS DECIMAL)) AS 'Média ataque dos pokemons' FROM pokemons
+SELECT AVG (CAST (ataque AS DECIMAL)) AS 'Média ataque dos pokemons' FROM pokemons;
 
 --11. Selecione a somatória dos ataques.
-SELECT SUM(ataque) AS 'Soma dos ataques dos pokemons' FROM pokemons
+SELECT SUM(ataque) AS 'Soma dos ataques dos pokemons' FROM pokemons;
 
 --12. Selecione a média dos ataques especiais quando o nome do pokemon começar com ‘P’.
-SELECT AVG (CAST (especial_ataque AS DECIMAL)) FROM pokemons WHERE nome LIKE ('P%')
+SELECT AVG (CAST (especial_ataque AS DECIMAL)) FROM pokemons WHERE nome LIKE ('P%');
+
+--------------------------------------------------------------------------------------------------------------
+--código estiver no intervalo de 50 a 100 categoria Seed
+UPDATE pokemons SET categoria = 'Seed' WHERE codigo > 50 AND codigo < 100;
+
+SELECT  codigo, nome, categoria FROM pokemons WHERE codigo >= 50 AND codigo <= 100;
+
+--nome conter ‘inj’ ataque 29
+UPDATE pokemons SET ataque = 29 WHERE nome LIKE '%inj%'
+
+SELECT nome, ataque FROM pokemons WHERE nome LIKE '%inj%'
+
+--velocidade for 5 velocidade 2
+UPDATE pokemons SET velocidade = 2 WHERE velocidade = 5;
+
+SELECT velocidade FROM pokemons WHERE velocidade = 2;
+
+--código for 100 categoria Manipulate
+UPDATE pokemons SET categoria = 'Manipulate' WHERE codigo = 100;
+
+SELECT codigo, categoria FROM pokemons WHERE codigo = 100;
+
+--nome começar com R nome trocar primeira letra por C
+UPDATE pokemons SET nome = REPLACE(nome, 'R', 'C') WHERE nome LIKE 'R%' 
+
+SELECT nome FROM pokemons WHERE nome LIKE 'C%'
