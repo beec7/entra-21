@@ -4,7 +4,7 @@
 	tipo INTEGER,
 	preco_unidatario DECIMAL(6,2)
 );
-
+select * FROM pecas
 CREATE TABLE clientes(
 	id INTEGER PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(50),
@@ -68,6 +68,7 @@ INSERT INTO clientes(nome, cpf) VALUES
 ('Cry', '032.599.384-69'),
 ('Júlianã', '123.495.392-02')
 
+SELECT * FROM clientes
 INSERT INTO enderecos(id_cliente, estado, cidade, bairro, cep, logradouro, numero) VALUES
 (1, 'SC', 'Blumenau', 'Velha', '89070-301', 'Rua Divinópolis', 777),
 (2, 'SC', 'Blumenau', 'Velha Grande', '89070-472','Morro da Edith', 36),
@@ -134,5 +135,81 @@ SELECT
 UPDATE pedidos SET status = 1 WHERE id = 2 
 
 -----------------------------------------------------------------------------------------------------------------------------
+INSERT INTO pedidos_pecas (id_pedido, id_peca, quantidade) VALUES
+	(1, 2, 2),
+	(1, 4, 1),
+	(1, 6, 1);
 
+UPDATE pedidos SET id_cliente = 2 WHERE id =1;
+
+SELECT 
+	pd.id AS 'Código pedido',
+	c.nome AS 'Clientes',
+	p.nome AS 'Peça',
+	pp.quantidade AS 'Quantidade',
+	CONCAT('R$', p.preco_unidatario) AS 'Valor Unitátio',
+	CONCAT('R$', p.preco_unidatario * pp.quantidade) AS 'Total das peças'
+	FROM pedidos_pecas AS pp
+	INNER JOIN pecas AS p ON (pp.id_peca = p.id)
+	INNER JOIN pedidos AS pd ON(pp.id_pedido = pd.id)
+	INNER JOIN clientes AS c ON(pd.id_cliente = c.id)
+
+INSERT INTO pedidos(id_cliente, data_criacao, status) VALUES 
+	(1, GETDATE(), 0);-- GETDATE é o mesmo que dar DataTime.Now
+
+INSERT INTO pedidos_pecas(id_pedido, id_peca, quantidade) VALUES
+	(3, 2, 2), --id_pedido=3 id_peca = 2 (SSD 240M2), quantidade=2
+	(3, 3, 2), --id_pedido=3 id_peca = 3 (RTX3090 TI), quantidade=2
+	(3, 5, 4) --id_pedido=3 id_peca = 2 (16Gb RAM DDR5), quantidade=4 Quad chanel 
+
+--Apresentar informações do pedido do cliente Claúdio --------------------------------
+SELECT
+	p.id AS 'Código Pedido',
+	p.status AS 'Status Pedido',
+	c.nome AS 'Cliente',
+	CONCAT(
+		e.estado, ' ',
+		e.cidade, ' ',
+		e.bairro, ' ',
+		e.logradouro, ' ',
+		e.numero, ' ') AS 'Endereço completo'
+
+	FROM pedidos AS p
+	INNER JOIN clientes AS c ON(p.id_cliente = c.id)
+	INNER JOIN enderecos AS e ON(c.id = e.id_cliente)
+	WHERE p.id_cliente = (SELECT id FROM clientes WHERE cpf = '070.355.489-73');
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+SELECT
+	p.id AS 'Código Pedido',
+	p.status AS 'Status Pedido',
+	c.nome AS 'Cliente',
+	pec.nome AS 'Peça'
+	FROM pedidos AS p
+	INNER JOIN clientes AS c ON(p.id_cliente = c.id)
+	INNER JOIN pedidos_pecas AS pp ON(p.id = pp.id_pedido)
+	INNER JOIN pecas AS pec ON(pp.id_peca = pec.id)
+	WHERE p.id_cliente = (SELECT id FROM clientes WHERE cpf = '070.355.489-73');
+
+---------------------------------------------------------------------------------------------------------------------------
+
+UPDATE pedidos 
+	SET
+		status = 2,
+		data_compla = '2022-07-12 17:30:00'
+	WHERE                
+
+
+
+
+
+
+
+
+
+
+
+
+
+		id = 3;
 
