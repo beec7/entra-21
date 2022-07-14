@@ -10,7 +10,7 @@ namespace Entra21.BancoDados01.Ado.Net.Models
     {
         public int Id { get; set; }
 
-        public string tipo { get; set; }
+        public string Tipo { get; set; }
 
     }
 }
