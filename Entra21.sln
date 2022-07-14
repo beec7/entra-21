@@ -46,6 +46,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.ExemplosWindowsForm
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlExemplo", "SqlExemplo", "{5DE54ABA-2E03-4486-B4E9-D4DAD9BCA4A6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExemploFrontSql", "ExemploFrontSql", "{BF1CE0C8-5308-4125-B24E-2BE56B358CB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entra21.BancoDados01.Ado.Net", "Entra21.BancoDados01.Ado.Net\Entra21.BancoDados01.Ado.Net.csproj", "{6E894352-0D7C-485F-B1D7-2513F6BEE19B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +104,10 @@ Global
 		{5F6303D5-EC58-4DF6-9037-20486588D686}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F6303D5-EC58-4DF6-9037-20486588D686}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F6303D5-EC58-4DF6-9037-20486588D686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E894352-0D7C-485F-B1D7-2513F6BEE19B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E894352-0D7C-485F-B1D7-2513F6BEE19B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E894352-0D7C-485F-B1D7-2513F6BEE19B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E894352-0D7C-485F-B1D7-2513F6BEE19B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,6 +125,7 @@ Global
 		{F8395EC7-A20B-4354-A914-56CDE2E5F93F} = {659B3E97-633E-4622-8C4B-59B3795CF92C}
 		{E2D5D0F0-D242-4EE2-86E0-D74497495289} = {28E39A4A-50A0-41F5-A120-FF04C0C6D353}
 		{5F6303D5-EC58-4DF6-9037-20486588D686} = {50E90806-7F74-497F-BCE9-F7C37F57B163}
+		{6E894352-0D7C-485F-B1D7-2513F6BEE19B} = {BF1CE0C8-5308-4125-B24E-2BE56B358CB4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2076B5DC-F847-4127-BF2A-D716315BF171}
