@@ -69,7 +69,43 @@ namespace Entra21.BancoDados01.Ado.Net.Views.TiposPersonagens
             AtualizarRegistrosDataGridView();
 
             MessageBox.Show("Registro apagado");
-            
+
+        }
+
+        private void Editar()
+        {
+
+
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Cadastre algum tipo de personagem");
+                return;
+            }
+
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione algum registro");
+                return;
+            }
+
+            var linhaSelecionada = dataGridView1.SelectedRows[0];
+
+            var id = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+
+            var tipoPersonagem = tipoPersonagemService.ObterPorId(id);
+
+            // Instanciado Objeto do from para permitir edicao passando o tipo personagem, que permitira preencher os campos com os dados do banco de dados
+            var tipoPersonagemForm = new TipoPersonagemCadastroEdicaoForms(tipoPersonagem);
+
+            tipoPersonagemForm.ShowDialog();
+
+            AtualizarRegistrosDataGridView();
+
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            Editar();
         }
     }
 }
