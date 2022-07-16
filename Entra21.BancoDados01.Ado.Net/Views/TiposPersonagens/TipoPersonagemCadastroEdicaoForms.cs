@@ -41,6 +41,7 @@ namespace Entra21.BancoDados01.Ado.Net.Views.TiposPersonagens
             //Persistir o registro
             var tipoPersonagemService = new TipoPersonagemService();
 
+            //Salvar
             if (idEdicao == -1)
             {
                 // Persistir a informacao na tabela de tipos_personagens
@@ -52,6 +53,7 @@ namespace Entra21.BancoDados01.Ado.Net.Views.TiposPersonagens
 
                 return;
             }
+            //Editar
             tipoPersonagem.Id = idEdicao;
 
             tipoPersonagemService.Editar(tipoPersonagem);
