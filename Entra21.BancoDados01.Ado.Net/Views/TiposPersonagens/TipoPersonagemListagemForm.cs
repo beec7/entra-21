@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Entra21.BancoDados01.Ado.Net.Views.TiposPersonagens
 {
-    public partial class TipoPersonagemListagemForm : Form
+    public partial class PersonagemCadastroEdicaoForm : Form
     {
         private TipoPersonagemService tipoPersonagemService;
 
-        public TipoPersonagemListagemForm()
+        public PersonagemCadastroEdicaoForm()
         {
             InitializeComponent();
             // Instancia o objeto da classe TipoPersonagemServico para permitir
