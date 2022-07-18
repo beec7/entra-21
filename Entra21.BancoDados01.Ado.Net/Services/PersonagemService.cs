@@ -60,7 +60,7 @@ namespace Entra21.BancoDados01.Ado.Net.Services
 
             comando.Connection.Close();
         }
-        Personagem IPersonagemService.ObterPorId(int id)
+        public Personagem ObterPorId(int id)
         {
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();

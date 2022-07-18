@@ -14,6 +14,7 @@ namespace Entra21.BancoDados01.Ado.Net.Views.Personagens
 {
     public partial class PersonagemCadastroEditarForm : Form
     {
+        private readonly int _idParaEditar;
         public PersonagemCadastroEditarForm()
         {
             InitializeComponent();
@@ -23,6 +24,36 @@ namespace Entra21.BancoDados01.Ado.Net.Views.Personagens
 
         }
 
+        public PersonagemCadastroEditarForm(Personagem personagem) : this()
+        {
+            _idParaEditar = personagem.Id;
+
+            textBoxNome.Text = personagem.Nome;
+
+            // percorrer cada um dos itens do tipo do personagem, para selecionar o que o usuario tinha cadastrado anteriomente
+            for (int i = 0; i < comboBoxTipoPersonagem.Items.Count; i++)
+            {
+                var tipoPersonagemPercorrido = comboBoxTipoPersonagem.Items[i] as TipoPersonagem;
+
+                if (tipoPersonagemPercorrido.Id == personagem.TipoPersonagem.Id)
+                {
+                    comboBoxTipoPersonagem.SelectedItem = tipoPersonagemPercorrido;
+                    break;
+                }
+            }
+
+            //Percorrer cada um dos itens da editora, para selecionar o que o usuario tinha cadastrado
+            for (int i = 0; i < comboBoxEditora.Items.Count; i++)
+            {
+                var editoraPercorrido = comboBoxEditora.Items[i] as Editora;
+
+                if (editoraPercorrido.Id == personagem.Editora.Id)
+                {
+                    comboBoxEditora.SelectedItem = editoraPercorrido;
+                    break;
+                }
+            }
+        }
         private void PersonagemCadastroEditarForm_Load(object sender, EventArgs e)
         {
 
@@ -35,7 +66,7 @@ namespace Entra21.BancoDados01.Ado.Net.Views.Personagens
                 MessageBox.Show("Selecione uma editora");
                 return;
             }
-            
+
             if (comboBoxTipoPersonagem.SelectedIndex == -1)
             {
                 MessageBox.Show("Selecione um tipo de personagem");
@@ -55,7 +86,7 @@ namespace Entra21.BancoDados01.Ado.Net.Views.Personagens
             personagemService.Cadastrar(personagem);
 
             MessageBox.Show("Salva com sucesso");
-            
+
             Close();
 
         }
