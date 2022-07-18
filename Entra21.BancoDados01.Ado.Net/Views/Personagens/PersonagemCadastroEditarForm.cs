@@ -19,7 +19,7 @@ namespace Entra21.BancoDados01.Ado.Net.Views.Personagens
             InitializeComponent();
 
             PreencherComboBoxTipoPersonagem();
-            //PreencherComboBoxEditora();
+            PreencherComboBoxEditora();
 
         }
 
@@ -74,6 +74,7 @@ namespace Entra21.BancoDados01.Ado.Net.Views.Personagens
 
         private void PreencherComboBoxEditora()
         {
+            // Buscar todos as editora do banco de dados para permitir o usuário escolher
             var editoraService = new EditoraService();
             var editoras = editoraService.ObterTodos();
 
@@ -82,6 +83,11 @@ namespace Entra21.BancoDados01.Ado.Net.Views.Personagens
                 var editora = editoras[i];
                 comboBoxEditora.Items.Add(editora);
             }
+        }
+
+        private void buttonCanselar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

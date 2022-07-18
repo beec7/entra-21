@@ -100,13 +100,13 @@ namespace Entra21.BancoDados01.Ado.Net.Services
             comando.CommandText = @"SELECT
 p.id AS 'id',
 p.nome AS 'nome',
-tp.ip AS 'tipo_personagem_id',
+tp.id AS 'tipo_personagem_id',
 tp.tipo AS 'tipo_personagem_tipo',
 e.id AS 'editora_id',
 e.nome AS 'editora_nome'
-FROM personagens
+FROM personagens AS p
 INNER JOIN tipos_personagens AS tp ON(p.id_tipo_personagem = tp.id )
-INNER JOIN editora AS e ON (p.id_editora = e.id) ";
+INNER JOIN editoras AS e ON (p.id_editora = e.id) ";
             // criado tabela em memoria para armazenar os registros do SELECT
             var tabelaEmMemoria =  new DataTable();
             // Executar o SELECT armazenando na tabela em memoria

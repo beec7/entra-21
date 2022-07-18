@@ -15,7 +15,7 @@ namespace Entra21.BancoDados01.Ado.Net.Services
         {
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
-            comando.CommandText = "SELECT id, nome, apelido, data_criacao, faturamento, FROM editoras";
+            comando.CommandText = "SELECT id, nome, apelido, data_criacao, faturamento FROM editoras";
 
             var tabelaEmMemoria = new DataTable();
 
