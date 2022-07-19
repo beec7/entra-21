@@ -28,11 +28,11 @@ namespace Entra21.BancoDados01.Ado.Net.Services
                 var linha = tabelaEmMemoria.Rows[i];
 
                 var editor =new Editora();
-                editor.Id = Convert.ToInt32(linha[0]);
-                editor.Nome = linha[1].ToString();
-                editor.Apelido = linha[2].ToString();
-                editor.DataCriacao = Convert.ToDateTime(linha[3]);
-                editor.Faturamento = Convert.ToDecimal(linha[4]);
+                editor.Id = Convert.ToInt32(linha["id"]);
+                editor.Nome = linha["nome"].ToString();
+                editor.Apelido = linha["apelido"].ToString();
+                editor.DataCriacao = Convert.ToDateTime(linha["data_criacao"]);
+                editor.Faturamento = Convert.ToDecimal(linha["faturamento"]);
 
                 editoras.Add(editor);
 

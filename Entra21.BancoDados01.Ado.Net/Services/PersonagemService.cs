@@ -49,7 +49,7 @@ namespace Entra21.BancoDados01.Ado.Net.Services
         {
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
-            comando.CommandText = "UPDATE personagens SET id_tipo_perosnagem = @ID_TIPO_PERSONAGEM, id_editora = @ID_EDITORA, nome = @NOME WHERE id = @ID";
+            comando.CommandText = "UPDATE personagens SET id_tipo_personagem = @ID_TIPO_PERSONAGEM, id_editora = @ID_EDITORA, nome = @NOME WHERE id = @ID";
 
             comando.Parameters.AddWithValue("@ID_TIPO_PERSONAGEM", personagem.TipoPersonagem.Id);
             comando.Parameters.AddWithValue("@ID_EDITORA", personagem.Editora.Id);

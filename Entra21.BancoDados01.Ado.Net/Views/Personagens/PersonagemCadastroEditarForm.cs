@@ -22,6 +22,8 @@ namespace Entra21.BancoDados01.Ado.Net.Views.Personagens
             PreencherComboBoxTipoPersonagem();
             PreencherComboBoxEditora();
 
+            _idParaEditar = -1;
+
         }
 
         public PersonagemCadastroEditarForm(Personagem personagem) : this()
@@ -83,12 +85,22 @@ namespace Entra21.BancoDados01.Ado.Net.Views.Personagens
             personagem.Editora = editora;
 
             var personagemService = new PersonagemService();
-            personagemService.Cadastrar(personagem);
 
-            MessageBox.Show("Salva com sucesso");
+            if (_idParaEditar == -1)
+            {
+                personagemService.Cadastrar(personagem);
+                MessageBox.Show("Salva com sucesso");
+                Close();
+            }
+            else
+            {
 
-            Close();
+                personagem.Id = _idParaEditar;
+                personagemService.Editar(personagem);
+                MessageBox.Show("Editado com sucesso");
+                Close();
 
+            }
         }
 
         private void PreencherComboBoxTipoPersonagem()

@@ -19,7 +19,9 @@ namespace Entra21.BancoDados01.Ado.Net.Services
             var comando = conexao.CreateCommand();
 
             // Definir o comando para apgar o rigistro
-            comando.CommandText = "DELETE FROM tipos_personagens WHERE id = " + id;
+            comando.CommandText = "DELETE FROM tipos_personagens WHERE id = @ID";
+
+            comando.Parameters.AddWithValue("@ID" , id);
 
             // Executa o comando para apgar o registro
             comando.ExecuteNonQuery();
@@ -41,8 +43,8 @@ namespace Entra21.BancoDados01.Ado.Net.Services
             SqlCommand comando = conexao.CreateCommand();
 
             //Esqpecificado o comando que sera ececutado
-            comando.CommandText = "INSERT INTO tipos_personagens (tipo) VALUES ('" +
-                tipoPersonagem.Tipo + "')";
+            comando.CommandText = "INSERT INTO tipos_personagens (tipo) VALUES (@TIPO)"; 
+            comando.Parameters.AddWithValue("@TIPO", tipoPersonagem.Tipo);
 
             //Executado o comando de insert na tabela de tipos personagens
             comando.ExecuteNonQuery();
@@ -56,7 +58,9 @@ namespace Entra21.BancoDados01.Ado.Net.Services
             var conexao = new Conexao().Conectar();
 
             var comando = conexao.CreateCommand();
-            comando.CommandText = "UPDATE tipos_personagens SET tipo = '" + tipoPersonagem.Tipo + "'" +" WHERE id = " + tipoPersonagem.Id;
+            comando.CommandText = "UPDATE tipos_personagens SET tipo = @TIPO WHERE id = @ID " ;
+            comando.Parameters.AddWithValue("@TIPO", tipoPersonagem.Tipo);
+            comando.Parameters.AddWithValue("@ID", tipoPersonagem.Id);
 
             comando.ExecuteNonQuery();
 
@@ -68,7 +72,9 @@ namespace Entra21.BancoDados01.Ado.Net.Services
             var conexao = new Conexao().Conectar();
 
             var comando = conexao.CreateCommand();
-            comando.CommandText = "SELECT id, tipo FROM tipos_personagens WHERE id = '" + id + "'";
+            comando.CommandText = "SELECT id, tipo FROM tipos_personagens WHERE id = @ID";
+            comando.Parameters.AddWithValue("@ID", id);
+
 
             var tabelaEmMemoria = new DataTable();
 
@@ -81,9 +87,9 @@ namespace Entra21.BancoDados01.Ado.Net.Services
 
             var tipoPersonagem = new TipoPersonagem();
 
-            tipoPersonagem.Id = Convert.ToInt32(primeiroRegistro[0]);
+            tipoPersonagem.Id = Convert.ToInt32(primeiroRegistro["id"]);
 
-            tipoPersonagem.Tipo = primeiroRegistro[1].ToString();
+            tipoPersonagem.Tipo = primeiroRegistro["tipo"].ToString();
 
             comando.Connection.Close();
 
