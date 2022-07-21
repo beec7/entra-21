@@ -96,5 +96,10 @@ namespace Entra21.BancoDados01.Ado.Net.Views.Personagens
 
             PreencherDataGridViewComPersonagens();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

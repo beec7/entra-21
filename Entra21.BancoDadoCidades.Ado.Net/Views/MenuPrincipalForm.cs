@@ -1,4 +1,5 @@
-﻿using Entra21.BancoDadoCidades.Ado.Net.Views.UnidadesFederativas;
+﻿using Entra21.BancoDadoCidades.Ado.Net.Views.Cidades;
+using Entra21.BancoDadoCidades.Ado.Net.Views.UnidadesFederativas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,12 @@ namespace Entra21.BancoDadoCidades.Ado.Net.Views
         {
             var unidadeFederativaListagemForm = new UnidadeFederativaListagemForm();
             unidadeFederativaListagemForm.ShowDialog();
+        }
+
+        private void buttonCidade_Click(object sender, EventArgs e)
+        {
+            var cidadeListagemForm = new CidadeListagemForm();
+            cidadeListagemForm.ShowDialog();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entra21.BancoDadoCidades.Ado.Net.Models
 {
-    internal class Cidade
+    public class Cidade
     {
         //PK
         public int Id { get; set; }
@@ -15,6 +15,7 @@ namespace Entra21.BancoDadoCidades.Ado.Net.Models
         public int QuantidadeHabitante { get; set; }
         public DateTime DataHoraFundacao { get; set; }
         public double Pib { get; set; }
+
 
         //FK
         public UnidadeFederativa UnidadeFederativa { get; set; }

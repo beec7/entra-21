@@ -92,7 +92,7 @@ INNER JOIN unidades_federativas AS uf ON(c.id_unidade_federativa = uf.id)";
                 cidade.DataHoraFundacao = Convert.ToDateTime(registro["data_hora_fundacao"]);
                 cidade.UnidadeFederativa.Id = Convert.ToInt32(registro["unidade_federativa_id"]);
                 cidade.UnidadeFederativa.Nome = registro["unidade_federativa_nome"].ToString(); 
-                cidade.UnidadeFederativa.Sigla = registro["unidade_federativa_sigla"].ToString();
+                cidade.UnidadeFederativa.Sigla = registro["unidade_federativa_silga"].ToString();
                 
                 cidades.Add(cidade);
             }
@@ -105,7 +105,7 @@ INNER JOIN unidades_federativas AS uf ON(c.id_unidade_federativa = uf.id)";
         {
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
-            comando.CommandText = @"SELECT id, nome, quantidade_habitante, pib, data_hora_fundacao, id_unidade_federativa FROM cidades WHERE id = @ID";
+            comando.CommandText = @"SELECT id, nome, quantidade_habitante, pib, data_hora_fundacao, id_unidade_federativa AS unidade_federativa FROM cidades WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", id);
 
             var dataTable = new DataTable();
@@ -120,7 +120,9 @@ INNER JOIN unidades_federativas AS uf ON(c.id_unidade_federativa = uf.id)";
             cidade.Nome = registro["nome"].ToString();
             cidade.QuantidadeHabitante = Convert.ToInt32(registro["quantidade_habitante"]);
             cidade.DataHoraFundacao = Convert.ToDateTime(registro["data_hora_fundacao"]);
-            cidade.UnidadeFederativa.Id = Convert.ToInt32(registro["id_unidade_federativa"]);
+            cidade.Pib = Convert.ToDouble(registro["pib"]);
+            cidade.UnidadeFederativa = new UnidadeFederativa();
+            cidade.UnidadeFederativa.Id = Convert.ToInt32(registro["unidade_federativa"]);
 
             comando.Connection.Close();
             return cidade;

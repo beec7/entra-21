@@ -43,6 +43,7 @@ namespace Entra21.BancoDadoCidades.Ado.Net.Views.Cidades
                     cidade.UnidadeFederativa.Id,
                     cidade.UnidadeFederativa.Nome,
                     cidade.UnidadeFederativa.Sigla,
+
                 });
             }
         }
@@ -51,18 +52,60 @@ namespace Entra21.BancoDadoCidades.Ado.Net.Views.Cidades
         {
             var cidadeCadastroEditarForm = new CidadeCadastroEditarForm();
             cidadeCadastroEditarForm.ShowDialog();
+
+            PreencherDaraGredViewCidade();
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
+            if (dataGridViewCidades.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione uma cidade para modificar as informações");
+                return;
 
+            }
+            var linhaSelecionada = dataGridViewCidades.SelectedRows[0];
+            var id = Convert.ToInt32(linhaSelecionada.Cells["ColumnId"].Value);
+
+            var cidade = _cidadeService.ObterPorId(id);
+
+            var cidadeCadastroEditarForm = new CidadeCadastroEditarForm(cidade);
+            cidadeCadastroEditarForm.ShowDialog();
+
+            PreencherDaraGredViewCidade();
         }
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
+            if (dataGridViewCidades.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione uma cidade");
+                return;
+            }
 
+            var linhaSelecionada = dataGridViewCidades.SelectedRows[0];
+            var id = Convert.ToInt32(linhaSelecionada.Cells["ColumnId"].Value);
+            var resposta = MessageBox.Show("Deseja realmente apagar esta cidade" + "Aviso" + MessageBoxButtons.YesNo);
+            if (resposta != DialogResult.Yes)
+            {
+                MessageBox.Show("Cidade não foi APAGADA");
+                PreencherDaraGredViewCidade();
+
+                return;
+            }
+
+            try
+            {
+                _cidadeService.Apagar(id);
+                MessageBox.Show("A Cidade selecionada foi removida com sucesso");
+
+                PreencherDaraGredViewCidade();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro !! \n" + ex);
+            }
         }
-
 
     }
 }

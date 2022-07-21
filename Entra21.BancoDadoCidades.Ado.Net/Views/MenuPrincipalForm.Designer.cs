@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonCidade = new System.Windows.Forms.Button();
             this.buttonUnidadeFederativa = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonCidade
             // 
-            this.button1.Location = new System.Drawing.Point(196, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 104);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonCidade.Location = new System.Drawing.Point(196, 12);
+            this.buttonCidade.Name = "buttonCidade";
+            this.buttonCidade.Size = new System.Drawing.Size(124, 104);
+            this.buttonCidade.TabIndex = 0;
+            this.buttonCidade.Text = "Cidade";
+            this.buttonCidade.UseVisualStyleBackColor = true;
+            this.buttonCidade.Click += new System.EventHandler(this.buttonCidade_Click);
             // 
             // buttonUnidadeFederativa
             // 
@@ -69,7 +70,7 @@
             this.ClientSize = new System.Drawing.Size(332, 186);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonUnidadeFederativa);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonCidade);
             this.Name = "MenuPrincipalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipalForm";
@@ -79,7 +80,7 @@
 
         #endregion
 
-        private Button button1;
+        private Button buttonCidade;
         private Button buttonUnidadeFederativa;
         private Button buttonSair;
     }

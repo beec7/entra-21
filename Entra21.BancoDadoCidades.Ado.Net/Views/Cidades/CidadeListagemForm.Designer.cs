@@ -40,7 +40,6 @@
             this.ColumnIdUnidadeFederativa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNomeUnidadeFederativa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSigla = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCidades)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,8 +86,7 @@
             this.ColumnPib,
             this.ColumnIdUnidadeFederativa,
             this.ColumnNomeUnidadeFederativa,
-            this.ColumnSigla,
-            this.Column1});
+            this.ColumnSigla});
             this.dataGridViewCidades.Location = new System.Drawing.Point(12, 35);
             this.dataGridViewCidades.Name = "dataGridViewCidades";
             this.dataGridViewCidades.ReadOnly = true;
@@ -145,12 +143,6 @@
             this.ColumnSigla.HeaderText = "Sigla";
             this.ColumnSigla.Name = "ColumnSigla";
             this.ColumnSigla.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // CidadeListagemForm
             // 
