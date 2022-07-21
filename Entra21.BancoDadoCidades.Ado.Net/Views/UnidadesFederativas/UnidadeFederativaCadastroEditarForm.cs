@@ -12,13 +12,12 @@ namespace Entra21.BancoDadoCidades.Ado.Net.Views.UnidadesFederativas
 
             _idParaEditar = -1;
         }
-
-        //public UnidadeFederativaCadastroEditarForm(UnidadeFederativa unidadeFederativa) : this()
-        //{
-        //   _idParaEditar = unidadeFederativa.Id;
-        //    textBoxNomeEstado = unidadeFederativa.Nome;
-        //    maskedTextBoxSigla = unidadeFederativa.Sigla;
-        //}
+        public UnidadeFederativaCadastroEditarForm(UnidadeFederativa unidadeFederativa) : this()
+        {
+            _idParaEditar = unidadeFederativa.Id;
+            textBoxNomeEstado.Text = unidadeFederativa.Nome;
+            maskedTextBoxSigla.Text = unidadeFederativa.Sigla;
+        }
 
         private void maskedTextBoxSigla_Leave(object sender, EventArgs e)
         {

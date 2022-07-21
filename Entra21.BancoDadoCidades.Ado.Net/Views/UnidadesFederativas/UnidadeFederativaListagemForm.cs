@@ -59,11 +59,38 @@ namespace Entra21.BancoDadoCidades.Ado.Net.Views.UnidadesFederativas
             }
 
             var linhaSelecionada = dataGridViewUnidadeFederativa.SelectedRows[0];
-            var id = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            var id = Convert.ToInt32(linhaSelecionada.Cells["ColumnId"].Value);
+            var resposta = MessageBox.Show("Deseja realmente apagar esta unidade federativa", "Aviso", MessageBoxButtons.YesNo);
+
+            if (resposta != DialogResult.Yes)
+            {
+                MessageBox.Show("Unidade Federativa não foi APAGADA");
+                PreencherDataGridViewUnidadeFederativa();
+
+                return;
+            }
 
             _unidadeFederativaService.Apagar(id);
-
             MessageBox.Show("Registro removido");
+
+            PreencherDataGridViewUnidadeFederativa();
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewUnidadeFederativa.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione uma unidade Federativa");
+                return;
+            }
+
+            var linhaSelecionada = dataGridViewUnidadeFederativa.SelectedRows[0];
+            var id = Convert.ToInt32(linhaSelecionada.Cells["ColumnId"].Value);
+
+            var unidadeFederativa = _unidadeFederativaService.ObterPorId(id);
+
+            var unidadeFederativaCadastroEditarForm = new UnidadeFederativaCadastroEditarForm(unidadeFederativa);
+            unidadeFederativaCadastroEditarForm.ShowDialog();
 
             PreencherDataGridViewUnidadeFederativa();
         }

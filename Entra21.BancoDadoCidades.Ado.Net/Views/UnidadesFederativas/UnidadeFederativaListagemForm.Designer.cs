@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.dataGridViewUnidadeFederativa = new System.Windows.Forms.DataGridView();
-            this.buttonCadastrar = new System.Windows.Forms.Button();
-            this.buttonEditar = new System.Windows.Forms.Button();
-            this.buttonApagar = new System.Windows.Forms.Button();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSigla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonCadastrar = new System.Windows.Forms.Button();
+            this.buttonEditar = new System.Windows.Forms.Button();
+            this.buttonApagar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUnidadeFederativa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +55,24 @@
             this.dataGridViewUnidadeFederativa.Size = new System.Drawing.Size(387, 397);
             this.dataGridViewUnidadeFederativa.TabIndex = 0;
             // 
+            // ColumnId
+            // 
+            this.ColumnId.HeaderText = "Id";
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            // 
+            // ColumnNome
+            // 
+            this.ColumnNome.HeaderText = "Nome";
+            this.ColumnNome.Name = "ColumnNome";
+            this.ColumnNome.ReadOnly = true;
+            // 
+            // ColumnSigla
+            // 
+            this.ColumnSigla.HeaderText = "Sigla";
+            this.ColumnSigla.Name = "ColumnSigla";
+            this.ColumnSigla.ReadOnly = true;
+            // 
             // buttonCadastrar
             // 
             this.buttonCadastrar.Location = new System.Drawing.Point(324, 12);
@@ -73,6 +91,7 @@
             this.buttonEditar.TabIndex = 2;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonApagar
             // 
@@ -83,24 +102,6 @@
             this.buttonApagar.Text = "Apagar";
             this.buttonApagar.UseVisualStyleBackColor = true;
             this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
-            // 
-            // ColumnId
-            // 
-            this.ColumnId.HeaderText = "Id";
-            this.ColumnId.Name = "ColumnId";
-            this.ColumnId.ReadOnly = true;
-            // 
-            // ColumnNome
-            // 
-            this.ColumnNome.HeaderText = "Nome";
-            this.ColumnNome.Name = "ColumnNome";
-            this.ColumnNome.ReadOnly = true;
-            // 
-            // ColumnSigla
-            // 
-            this.ColumnSigla.HeaderText = "Sigla";
-            this.ColumnSigla.Name = "ColumnSigla";
-            this.ColumnSigla.ReadOnly = true;
             // 
             // UnidadeFederativaListagemForm
             // 
