@@ -17,7 +17,7 @@ FOREIGN KEY (id_unidade_federativa) REFERENCES  unidades_federativas(id));
 
 SELECT * FROM unidades_federativas
 
-SELECT * FROM cidades
+SELECT id, nome, quantidade_habitante, pib, data_hora_fundacao, id_unidade_federativa FROM cidades
 
 INSERT INTO unidades_federativas(nome, sigla) VALUES (@NOME, @SIGLA);
 
@@ -31,3 +31,14 @@ DELETE FROM cidades WHERE id = @ID
 
 DELETE FROM unidades_federativas WHERE id = @ID
 
+SELECT 
+c.id AS 'id',
+c.nome AS 'nome',
+c.quantidade_habitante AS 'quantidade_habitante',
+c.pib AS 'pib',
+c.data_hora_fundacao AS 'data_hora_fundacao',
+uf.id AS 'unidade_federativa_id',
+uf.nome AS 'unidade_federativa_nome',
+uf.sigla AS 'unidade_federativa_silga'
+FROM cidades AS c 
+INNER JOIN unidades_federativas AS uf ON(c.id_unidade_federativa = uf.id)

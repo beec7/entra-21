@@ -44,6 +44,10 @@ namespace Entra21.BancoDadoCidades.Ado.Net.Services
             comando.CommandText = @"DELETE FROM unidades_federativas WHERE id = @ID";
 
             comando.Parameters.AddWithValue("@ID", id);
+
+            comando.ExecuteNonQuery();
+
+            comando.Connection.Close();
         }
 
         public List<UnidadeFederativa> ObterTodos()
