@@ -69,11 +69,18 @@ namespace Entra21.BancoDadoCidades.Ado.Net.Views.UnidadesFederativas
 
                 return;
             }
+            try
+            {
+                _unidadeFederativaService.Apagar(id);
+                MessageBox.Show("Registro removido");
 
-            _unidadeFederativaService.Apagar(id);
-            MessageBox.Show("Registro removido");
+                PreencherDataGridViewUnidadeFederativa();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro\n" + ex);
+            }
 
-            PreencherDataGridViewUnidadeFederativa();
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
