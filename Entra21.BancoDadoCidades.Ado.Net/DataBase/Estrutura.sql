@@ -42,3 +42,5 @@ uf.nome AS 'unidade_federativa_nome',
 uf.sigla AS 'unidade_federativa_silga'
 FROM cidades AS c 
 INNER JOIN unidades_federativas AS uf ON(c.id_unidade_federativa = uf.id)
+
+INSERT INTO cidades(nome, quantidade_habitante, pib, data_hora_fundacao, id_unidade_federativa) VALUES ('Blumenau', 366418, 45000.50, '1850-09-02 10:10:10', 1)
