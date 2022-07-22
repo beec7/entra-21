@@ -1,20 +1,11 @@
 ﻿using Entra21.BancoDadoCidades.Ado.Net.Models;
 using Entra21.BancoDadoCidades.Ado.Net.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Entra21.BancoDadoCidades.Ado.Net.Views.Cidades
 {
     public partial class CidadeCadastroEditarForm : Form
     {
-        private readonly int _IdParaEditar;
+        private readonly int _idParaEditar;
         private readonly CidadeService _cidadeService;
         private readonly UnidadeFederativaService _unidadeFederativaService;
 
@@ -27,12 +18,12 @@ namespace Entra21.BancoDadoCidades.Ado.Net.Views.Cidades
 
             PreencherComboBoxUnidadeFederativa();
             
-            _IdParaEditar = -1;
+            _idParaEditar = -1;
         }
 
         public CidadeCadastroEditarForm(Cidade cidade) : this()
         {
-            _IdParaEditar = cidade.Id;
+            _idParaEditar = cidade.Id;
             textBoxCidade.Text = cidade.Nome;
             dateTimePickerDataFundacao.Value = cidade.DataHoraFundacao;
             maskedTextBoxHoraFundacao.Text = cidade.DataHoraFundacao.ToString("hh:mm");
@@ -67,5 +58,53 @@ namespace Entra21.BancoDadoCidades.Ado.Net.Views.Cidades
             }
         }
 
+        private void buttonSalvar_Click(object sender, EventArgs e)// TODO: Ajustar hora
+        {
+            if (Validar() == true)
+            {
+                var cidade = new Cidade();
+                cidade.Nome = textBoxCidade.Text.Trim();
+                cidade.QuantidadeHabitante = Convert.ToInt32(numericUpDownQuantidadeHabitante.Value);
+                cidade.Pib = Convert.ToDouble(textBoxPib.Text);
+                cidade.UnidadeFederativa = comboBoxUnidadeFederativa.SelectedItem as UnidadeFederativa;
+                cidade.DataHoraFundacao = dateTimePickerDataFundacao.Value.Date + TimeSpan.Parse(maskedTextBoxHoraFundacao.Text);
+
+                if (_idParaEditar == -1)
+                {
+                    _cidadeService.Cadastrar(cidade);
+                    MessageBox.Show("Salvo com sucesso");
+                    Close();
+                }
+                else
+                {
+                    cidade.Id = _idParaEditar;
+                    _cidadeService.Editar(cidade);
+                    MessageBox.Show("Salvo com sucesso");
+                    Close();
+                }
+
+            }
+        }
+
+        private bool Validar()
+        {
+            if (comboBoxUnidadeFederativa.SelectedIndex == -1)
+            {
+                MessageBox.Show("Unidade Federativa não foi selecionado");
+                return false;
+            }
+            if (dateTimePickerDataFundacao.Value > DateTime.Today)
+            {
+                MessageBox.Show("A data não pode ser maio do que a data atual");
+                return false;
+            }
+            if (textBoxCidade.Text.Length < 2)
+            {
+                MessageBox.Show("O nome da cidade n");
+                return false;
+            }
+
+            return true;
+        }
     }
 }

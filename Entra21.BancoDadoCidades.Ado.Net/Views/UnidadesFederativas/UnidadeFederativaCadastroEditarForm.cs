@@ -6,10 +6,12 @@ namespace Entra21.BancoDadoCidades.Ado.Net.Views.UnidadesFederativas
     public partial class UnidadeFederativaCadastroEditarForm : Form
     {
         private readonly int _idParaEditar;
+        private readonly UnidadeFederativaService _unidadeFederativaService;
         public UnidadeFederativaCadastroEditarForm()
         {
             InitializeComponent();
 
+            _unidadeFederativaService = new UnidadeFederativaService();
             _idParaEditar = -1;
         }
         public UnidadeFederativaCadastroEditarForm(UnidadeFederativa unidadeFederativa) : this()
@@ -40,11 +42,9 @@ namespace Entra21.BancoDadoCidades.Ado.Net.Views.UnidadesFederativas
                 unidadeFederativa.Nome = nome;
                 unidadeFederativa.Sigla = sigla;
 
-                var unidadeFederativaService = new UnidadeFederativaService();
-
                 if (_idParaEditar == -1)
                 {
-                    unidadeFederativaService.Cadastrar(unidadeFederativa);
+                    _unidadeFederativaService.Cadastrar(unidadeFederativa);
                     MessageBox.Show("Salvo com sucesso");
                     Close();
 
@@ -52,7 +52,7 @@ namespace Entra21.BancoDadoCidades.Ado.Net.Views.UnidadesFederativas
                 else
                 {
                     unidadeFederativa.Id = _idParaEditar;
-                    unidadeFederativaService.Editar(unidadeFederativa);
+                    _unidadeFederativaService.Editar(unidadeFederativa);
                     MessageBox.Show("Editado com sucesso");
                     Close();
 

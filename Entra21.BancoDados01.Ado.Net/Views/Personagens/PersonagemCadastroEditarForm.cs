@@ -94,12 +94,10 @@ namespace Entra21.BancoDados01.Ado.Net.Views.Personagens
             }
             else
             {
-
                 personagem.Id = _idParaEditar;
                 personagemService.Editar(personagem);
                 MessageBox.Show("Editado com sucesso");
                 Close();
-
             }
         }
 

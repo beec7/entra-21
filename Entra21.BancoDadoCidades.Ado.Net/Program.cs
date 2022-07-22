@@ -1,5 +1,4 @@
 using Entra21.BancoDadoCidades.Ado.Net.Views;
-using Entra21.BancoDadoCidades.Ado.Net.Views.UnidadesFederativas;
 
 namespace Entra21.BancoDadoCidades.Ado.Net
 {

@@ -53,6 +53,7 @@
             this.buttonSalvar.TabIndex = 0;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // buttonCancelar
             // 
@@ -66,7 +67,7 @@
             // 
             // comboBoxUnidadeFederativa
             // 
-            this.comboBoxUnidadeFederativa.DisplayMember = "Nome Sigla";
+            this.comboBoxUnidadeFederativa.DisplayMember = "Nome";
             this.comboBoxUnidadeFederativa.FormattingEnabled = true;
             this.comboBoxUnidadeFederativa.Location = new System.Drawing.Point(12, 71);
             this.comboBoxUnidadeFederativa.Name = "comboBoxUnidadeFederativa";
@@ -104,10 +105,11 @@
             // maskedTextBoxHoraFundacao
             // 
             this.maskedTextBoxHoraFundacao.Location = new System.Drawing.Point(210, 119);
-            this.maskedTextBoxHoraFundacao.Mask = "99:99";
+            this.maskedTextBoxHoraFundacao.Mask = "00:00";
             this.maskedTextBoxHoraFundacao.Name = "maskedTextBoxHoraFundacao";
             this.maskedTextBoxHoraFundacao.Size = new System.Drawing.Size(104, 23);
             this.maskedTextBoxHoraFundacao.TabIndex = 6;
+            this.maskedTextBoxHoraFundacao.ValidatingType = typeof(System.DateTime);
             // 
             // textBoxPib
             // 
